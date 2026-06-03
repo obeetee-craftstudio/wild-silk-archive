@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>V&A Wild Silk Holdings — Sorted Archive</title>
+<title>Wild Silk Archive — Obeetee Craft Studio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -13,9 +13,9 @@
 
 <header class="site-header">
   <div class="header-inner">
-    <h1>V&amp;A Wild Silk Holdings</h1>
-    <p class="subtitle">A sorted archive of <strong id="total-count">41</strong> objects · Tasar, Eri &amp; Muga · 17th century → 2019 · India + Britain</p>
-    <p class="source">Source: Victoria &amp; Albert Museum, London. <a href="https://collections.vam.ac.uk/" target="_blank" rel="noopener">collections.vam.ac.uk</a></p>
+    <p class="kicker">Obeetee Craft Studio</p>
+    <h1>Wild Silk Archive</h1>
+    <p class="subtitle"><strong id="total-count">—</strong> wild silk objects from museum collections worldwide, organised by yarn — tasar, tussore &amp; tussah, muga, eri. Indexed verbatim from each museum's own catalogue. Filter by museum to see who holds what.</p>
   </div>
 </header>
 
@@ -29,60 +29,45 @@
       </div>
 
       <div class="search-wrap">
-        <input type="search" id="search-input" placeholder="Search title, place, accession…">
+        <input type="search" id="search-input" placeholder="Search title, material, place, accession…">
       </div>
 
-      <div class="filter-group" data-filter="region">
-        <h4>By Geography</h4>
+      <div class="filter-group" data-filter="fibreBucket">
+        <h4>Yarn</h4>
         <ul class="filter-list"></ul>
       </div>
 
-      <div class="filter-group" data-filter="yearBucket">
-        <h4>By Year</h4>
+      <div class="filter-group" data-filter="museum">
+        <h4>Museum</h4>
         <ul class="filter-list"></ul>
       </div>
 
-      <div class="filter-group" data-filter="fibre">
-        <h4>By Fibre</h4>
+      <div class="filter-group" data-filter="country">
+        <h4>Country / region</h4>
         <ul class="filter-list"></ul>
       </div>
 
-      <div class="filter-group" data-filter="sampleType">
-        <h4>By Sample Type</h4>
+      <div class="filter-group" data-filter="century">
+        <h4>Century</h4>
         <ul class="filter-list"></ul>
       </div>
 
-      <div class="filter-group" data-filter="technique">
-        <h4>By Technique</h4>
-        <ul class="filter-list"></ul>
-      </div>
-
-      <div class="filter-group" data-filter="dyeBinary">
-        <h4>By Dye</h4>
-        <ul class="filter-list"></ul>
-      </div>
-
-      <div class="filter-group" data-filter="dyeStatus">
-        <h4>By Dye Status (detail)</h4>
-        <ul class="filter-list"></ul>
-      </div>
-
-      <div class="filter-group" data-filter="objectType">
-        <h4>By Object Type</h4>
+      <div class="filter-group" data-filter="objectForm">
+        <h4>Object form</h4>
         <ul class="filter-list"></ul>
       </div>
     </aside>
 
     <main class="results-main">
       <div class="results-bar">
-        <span id="result-count">Showing all 42 objects</span>
+        <span id="result-count">Showing all objects</span>
         <div class="sort-wrap">
           <label for="sort-select">Sort:</label>
           <select id="sort-select">
-            <option value="year-asc">Year (oldest first)</option>
-            <option value="year-desc">Year (newest first)</option>
+            <option value="fibre">By yarn</option>
             <option value="title">Title (A → Z)</option>
-            <option value="region">Region</option>
+            <option value="date">Date</option>
+            <option value="museum">Museum</option>
           </select>
         </div>
       </div>
@@ -93,8 +78,8 @@
 </section>
 
 <footer class="site-footer">
-  <p>Obeetee Craft Studio</p>
-  <p class="footer-note">Click any object card to see full details and the V&amp;A page link. To extend this archive (e.g. with Forbes Watson 1866 swatches), simply add new entries to <code>data.js</code>.</p>
+  <p>Obeetee Craft Studio &middot; Wild Silk Archive</p>
+  <p class="footer-note">Built as an internal reference tool. Records catalogued verbatim from each museum's own source — no paraphrasing. Source links live on every record.</p>
 </footer>
 
 <!-- Modal -->
@@ -105,7 +90,208 @@
   </div>
 </div>
 
+<!-- Data files (one per museum). To add a museum: drop a data file
+     here + register an adapter in script-archive.js. Nothing else. -->
 <script src="data.js"></script>
-<script src="script.js"></script>
+<script src="data-im.js"></script>
+<script src="data-nm.js"></script>
+<script src="data-met.js"></script>
+<script src="data-artic.js"></script>
+<script src="data-fw.js"></script>
+<script src="data-si.js"></script>
+
+<script src="script-archive.js"></script>
+
+<!-- ====== Wild Silk Archive — Visitor Gate ====== -->
+<div id="wsa-gate" style="display:none;">
+  <div class="wsa-gate-backdrop"></div>
+  <div class="wsa-gate-card">
+    <h2>Before you enter the Wild Silk Archive</h2>
+    <form id="wsa-form" novalidate>
+      <label>
+        <span>Name</span>
+        <input type="text" name="name" required autocomplete="name" />
+      </label>
+      <label>
+        <span>Email</span>
+        <input type="email" name="email" required autocomplete="email" />
+        <small>No spam. No sharing. Used only to know who's visiting.</small>
+      </label>
+      <label>
+        <span>I am a&hellip;</span>
+        <select name="field" required>
+          <option value="">Select one</option>
+          <option>Researcher</option>
+          <option>Designer</option>
+          <option>Weaver</option>
+          <option>Brand</option>
+          <option>Student</option>
+          <option>Curator</option>
+          <option>Journalist</option>
+          <option>Other</option>
+        </select>
+      </label>
+      <button type="submit" id="wsa-submit">Enter the Archive</button>
+      <p id="wsa-error" style="display:none;"></p>
+    </form>
+  </div>
+</div>
+
+<style>
+  #wsa-gate {
+    position: fixed; inset: 0; z-index: 99999;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    color: #2b1f14;
+  }
+  .wsa-gate-backdrop {
+    position: absolute; inset: 0;
+    background: rgba(244, 239, 232, 0.96);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .wsa-gate-card {
+    position: relative;
+    background: #fdfaf3;
+    border: 1px solid #c9b89a;
+    padding: 48px 44px 40px;
+    width: min(440px, 92vw);
+    box-shadow: 0 20px 60px rgba(40, 25, 10, 0.18);
+  }
+  .wsa-gate-card h2 {
+    font-weight: 500;
+    font-size: 26px;
+    letter-spacing: 0.01em;
+    margin: 0 0 28px;
+    line-height: 1.2;
+    text-align: center;
+  }
+  #wsa-form label { display: block; margin-bottom: 18px; }
+  #wsa-form label > span {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #6b5a40;
+    margin-bottom: 6px;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+  }
+  #wsa-form input,
+  #wsa-form select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #c9b89a;
+    background: #fff;
+    font-size: 15px;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    color: #2b1f14;
+    border-radius: 0;
+    outline: none;
+    box-sizing: border-box;
+  }
+  #wsa-form input:focus,
+  #wsa-form select:focus { border-color: #5d3a1f; }
+  #wsa-form small {
+    display: block;
+    margin-top: 4px;
+    font-size: 11px;
+    color: #8a7560;
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.4;
+  }
+  #wsa-submit {
+    width: 100%;
+    margin-top: 8px;
+    padding: 12px;
+    background: #3d2817;
+    color: #fdfaf3;
+    border: none;
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  #wsa-submit:hover { background: #2e1a0f; }
+  #wsa-submit:disabled { opacity: 0.6; cursor: wait; }
+  #wsa-error {
+    margin: 14px 0 0;
+    font-size: 12px;
+    color: #a04020;
+    text-align: center;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+</style>
+
+<script>
+  (function () {
+    // === PASTE YOUR APPS SCRIPT WEB APP URL HERE between the quotes ===
+    const WSA_ENDPOINT = 'https://script.google.com/macros/s/AKfycby0F_WqguOm_b1j7gkTXYjCFJ-U_RpEbXVbW2f3WLyCAtaNGhm9LTECITDfSC8dZ33j/exec';
+
+    const gate = document.getElementById('wsa-gate');
+    const form = document.getElementById('wsa-form');
+    const submitBtn = document.getElementById('wsa-submit');
+    const errorEl = document.getElementById('wsa-error');
+
+    // Already entered on this device? skip gate.
+    if (localStorage.getItem('wsa_entered') === 'true') {
+      gate.remove();
+      return;
+    }
+
+    // Show gate + lock scroll
+    gate.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      errorEl.style.display = 'none';
+
+      const fd = new FormData(form);
+      const payload = {
+        name: (fd.get('name') || '').trim(),
+        email: (fd.get('email') || '').trim(),
+        field: fd.get('field'),
+        userAgent: navigator.userAgent
+      };
+
+      if (!payload.name || !payload.email || !payload.field) {
+        errorEl.textContent = 'Please fill all fields.';
+        errorEl.style.display = 'block';
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Entering\u2026';
+
+      try {
+        // mode: no-cors — we can't read the response, but the row writes to the Sheet.
+        await fetch(WSA_ENDPOINT, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(payload)
+        });
+        localStorage.setItem('wsa_entered', 'true');
+        gate.style.transition = 'opacity 0.4s';
+        gate.style.opacity = '0';
+        setTimeout(function () {
+          gate.remove();
+          document.body.style.overflow = '';
+        }, 400);
+      } catch (err) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Enter the Archive';
+        errorEl.textContent = 'Something went wrong. Try again.';
+        errorEl.style.display = 'block';
+      }
+    });
+  })();
+</script>
+<!-- ====== /Wild Silk Archive — Visitor Gate ====== -->
+
 </body>
 </html>
