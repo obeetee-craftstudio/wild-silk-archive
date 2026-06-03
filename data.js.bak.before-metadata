@@ -1,0 +1,1010 @@
+/* ============================================================
+   V&A Wild Silk Holdings — Data
+   ------------------------------------------------------------
+   Vocabulary policy: every visible field on this archive must
+   match the wording used on the corresponding V&A page at
+   collections.vam.ac.uk. No editorial paraphrasing.
+
+   Cross-checked against spelling variants per Yusuf Ali,
+   *Monograph on Silk Fabrics* (1900), §17 + §21:
+     tasar, tussar, tussore, tussah, tussor, tasur, tasser,
+     tesser, tasseh, tusha, tushar, tassar, tusser, kosa,
+     bughy, gutt, koa, kuswari (vernacular), eri, andi, endi,
+     muga, moonga.
+
+   Required fields per item:
+     id, title, imageFile, accession, vaUrl,
+     vaObjectType   — exact V&A "Object type"
+     vaMaterial     — exact V&A "Materials and techniques"
+     vaLocation     — broad place per V&A page
+     vaTechniqueBucket — Woven | Embroidery | Print | ""
+     vaDyeBucket    — Dyed | Undyed
+     vaSection      — Indian wild silk | British / Indian wild silk
+                      | European tussore / Chinese tussah
+
+   Source: Victoria & Albert Museum, London — collections.vam.ac.uk
+   ============================================================ */
+
+const items = [
+
+  /* ============================================================
+     SECTION 1 — INDIAN WILD SILK
+     ============================================================ */
+
+  { id: 1, title: "Textile (Bhagalpur tasar large check)", imageFile: "Textile (Bhagalpur .png", accession: "7341(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O480816/textile-unknown/",
+    vaObjectType: "Textile", vaMaterial: "Cotton, woven", vaLocation: "Bihar",
+    vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 2, title: "Embroidered Seersucker (Dhaka)", imageFile: "Embroidered Muslin (Dhaka).png", accession: "5887(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O446933/embroidered-seersucker-unknown/",
+    vaObjectType: "Embroidered Seersucker", vaMaterial: "Cotton and muga silk striped seersucker embroidered with muga silk",
+    vaLocation: "Bangladesh", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  { id: 5, title: "Sari", imageFile: "Sari (Rajesh.png", accession: "IS.1495:1-2019",
+    vaUrl: "https://collections.vam.ac.uk/item/O1497013/sari-singh-rajesh-pratap/",
+    vaObjectType: "Sari", vaMaterial: "Tasar Silk", vaLocation: "Uttar Pradesh",
+    vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 6, title: "Textile", imageFile: "Tasar Silk (Birbhum).png", accession: "7358(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O476269/textile-unknown/",
+    vaObjectType: "Textile", vaMaterial: "Silk, woven", vaLocation: "West Bengal",
+    vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  { id: 7, title: "Textile", imageFile: "Tasar Silk .png", accession: "7352(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O477767/textile-unknown/",
+    vaObjectType: "Textile", vaMaterial: "Silk, woven", vaLocation: "Bihar",
+    vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 8, title: "Textile", imageFile: "Tasar Silk 2 .png", accession: "05737(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O476181/textile-unknown/",
+    vaObjectType: "Textile", vaMaterial: "Silk, woven", vaLocation: "Telangana",
+    vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  { id: 9, title: "Textile", imageFile: "Tasar Silk 3.png", accession: "05682(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O476185/textile-unknown/",
+    vaObjectType: "Textile", vaMaterial: "Silk, woven", vaLocation: "Telangana",
+    vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  { id: 10, title: "Textile", imageFile: "Tasar Silk 4 .png", accession: "05641(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O476190/textile-unknown/",
+    vaObjectType: "Textile", vaMaterial: "Silk, woven", vaLocation: "Telangana",
+    vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 11, title: "Textile", imageFile: "Tasar Silk 5 (Hyderabad .png", accession: "7336(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O475527/textile-unknown/",
+    vaObjectType: "Textile", vaMaterial: "Silk, woven", vaLocation: "Telangana",
+    vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  { id: 12, title: "Textile", imageFile: "Tasar Silk 6 .png", accession: "5087(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O477735/textile-unknown/",
+    vaObjectType: "Textile", vaMaterial: "Silk, woven", vaLocation: "Bihar",
+    vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 13, title: "Textile", imageFile: "Checked Silk .png", accession: "7346(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O476642/textile-unknown/",
+    vaObjectType: "Textile", vaMaterial: "Woven silk", vaLocation: "Bihar",
+    vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 14, title: "Dhoti", imageFile: "Dhoti (Bhagal.png", accession: "5526A(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O477787/dhoti-unknown/",
+    vaObjectType: "Dhoti", vaMaterial: "Silk, woven", vaLocation: "Bihar",
+    vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 15, title: "Lungi", imageFile: "lungi(gaya).png", accession: "4834(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O480603/lungi-unknown/",
+    vaObjectType: "Lungi", vaMaterial: "Tasar Silk, Cotton (Textile), Weaving", vaLocation: "Bihar",
+    vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 16, title: "Textile", imageFile: "Textile 7 .png", accession: "5085(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O477792/textile-unknown/",
+    vaObjectType: "Textile", vaMaterial: "Silk, woven", vaLocation: "Bihar",
+    vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 17, title: "Textile", imageFile: "Textile 8 .png", accession: "7343(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O477344/textile-unknown/",
+    vaObjectType: "Textile", vaMaterial: "Silk, woven", vaLocation: "Bihar",
+    vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 18, title: "Textile", imageFile: "Textile 9.png", accession: "05738(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O476180/textile-unknown/",
+    vaObjectType: "Textile", vaMaterial: "Woven silk", vaLocation: "Bihar",
+    vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 19, title: "Garment", imageFile: "Garment(Baharampur).png", accession: "5544(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O476379/garment-unknown/",
+    vaObjectType: "Garment", vaMaterial: "Woven silk", vaLocation: "West Bengal",
+    vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 20, title: "Eri Silk", imageFile: "EriSilk(Darjeeling).png", accession: "05447(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O477650/eri-silk-unknown/",
+    vaObjectType: "Eri Silk", vaMaterial: "Silk, woven", vaLocation: "West Bengal",
+    vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 21, title: "Chaddar", imageFile: "chaddar.png", accession: "05676(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O477303/chaddar-unknown/",
+    vaObjectType: "Chaddar", vaMaterial: "Chaddar (shawl) of eri silk embroidered with muga or tasar silk",
+    vaLocation: "Nepal", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 22, title: "Kerchief", imageFile: "Kerchief (Guwahati.png", accession: "5107(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O477273/kerchief-unknown/",
+    vaObjectType: "Kerchief", vaMaterial: "Silk, woven and embroidered", vaLocation: "Assam",
+    vaTechniqueBucket: "Embroidery", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 23, title: "Mosquito curtain", imageFile: "MosquitoCurtain(Darrang.png", accession: "7504(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O453956/mosquito-curtain-unknown/",
+    vaObjectType: "Mosquito curtain", vaMaterial: "Muga Silk, woven", vaLocation: "Assam",
+    vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 24, title: "Mosquito netting", imageFile: "MosquitoNetting(Murshi.png", accession: "8812(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O478721/mosquito-netting-unknown/",
+    vaObjectType: "Mosquito netting", vaMaterial: "Wild Silk, woven", vaLocation: "West Bengal",
+    vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 25, title: "Garment cloth", imageFile: "Garment Cloth .png", accession: "8446(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O478211/garment-cloth-unknown/",
+    vaObjectType: "Garment cloth", vaMaterial: "Muga Silk, Natural Fibre, woven", vaLocation: "West Bengal",
+    vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 26, title: "Scarf", imageFile: "Scarf2Guwahati.png", accession: "05721(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O477649/scarf-unknown/",
+    vaObjectType: "Scarf", vaMaterial: "Silk, woven", vaLocation: "Assam",
+    vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 27, title: "Scarf", imageFile: "Scarf(Assam .png", accession: "05450(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O480580/scarf-unknown/",
+    vaObjectType: "Scarf", vaMaterial: "Muga silk", vaLocation: "Assam",
+    vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 28, title: "Border", imageFile: "border.png", accession: "T.6-1936",
+    vaUrl: "https://collections.vam.ac.uk/item/O73064/border-unknown/",
+    vaObjectType: "Border", vaMaterial: "Embroidered cotton muslin with silk, bobbin lace",
+    vaLocation: "West Bengal", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  { id: 29, title: "Quilt", imageFile: "quilt.png", accession: "616-1886",
+    vaUrl: "https://collections.vam.ac.uk/item/O88533/quilt-unknown/",
+    vaObjectType: "Quilt",
+    vaMaterial: "Cotton, embroidered in chain stitch and back stitch with tussar silk thread",
+    vaLocation: "West Bengal", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  { id: 30, title: "Rumal", imageFile: "Rumal (Dhaka.png", accession: "IS.118-1965",
+    vaUrl: "https://collections.vam.ac.uk/item/O109833/rumal-unknown/",
+    vaObjectType: "Rumal", vaMaterial: "Embroidered cotton with silk", vaLocation: "Bangladesh",
+    vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  { id: 31, title: "Scarf", imageFile: "Scarf (Nepal.png", accession: "05674(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O106280/scarf-unknown/",
+    vaObjectType: "Scarf", vaMaterial: "Cotton, woven, embroidered with silk", vaLocation: "Nepal",
+    vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  { id: 32, title: "Stole", imageFile: "Stole (Bengal.png", accession: "IS.107-1985",
+    vaUrl: "https://collections.vam.ac.uk/item/O477280/stole-unknown/",
+    vaObjectType: "Stole", vaMaterial: "Embroidered cotton with silk", vaLocation: "West Bengal",
+    vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  { id: 33, title: "Textile", imageFile: "Textile 11 .png", accession: "IS.149-1965",
+    vaUrl: "https://collections.vam.ac.uk/item/O477292/textile-unknown/",
+    vaObjectType: "Textile", vaMaterial: "Embroidered cotton with tussar silk", vaLocation: "West Bengal",
+    vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  { id: 34, title: "Muslin", imageFile: "Muslin (Lucknow.png", accession: "IS.984-1883",
+    vaUrl: "https://collections.vam.ac.uk/item/O164826/muslin-unknown/",
+    vaObjectType: "Muslin", vaMaterial: "Embroidered muslin", vaLocation: "Uttar Pradesh",
+    vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  { id: 37, title: "Shawl", imageFile: "Shawl (Delhi .png", accession: "IS.161-1897",
+    vaUrl: "https://collections.vam.ac.uk/item/O477094/shawl-unknown/",
+    vaObjectType: "Shawl", vaMaterial: "Tussur silk, natural, embroidered", vaLocation: "Delhi",
+    vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  { id: 38, title: "Coat", imageFile: "Coat : Choga .png", accession: "IS.18-1995",
+    vaUrl: "https://collections.vam.ac.uk/item/O470823/coat-sarabhai-asha/",
+    vaObjectType: "Coat", vaMaterial: "Silk (Textile), Wool", vaLocation: "Gujarat",
+    vaTechniqueBucket: "", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 39, title: "Sari", imageFile: "Sari (Urmila &.png", accession: "IS.2-2000",
+    vaUrl: "https://collections.vam.ac.uk/item/O35106/sari-devi-geeta/",
+    vaObjectType: "Sari", vaMaterial: "Tasar silk, hand painted design", vaLocation: "Bihar",
+    vaTechniqueBucket: "", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 40, title: "Shoulder cloth", imageFile: "Shoulder Cloth .png", accession: "IS.4-1988",
+    vaUrl: "https://collections.vam.ac.uk/item/O453970/shoulder-cloth-unknown/",
+    vaObjectType: "Shoulder cloth", vaMaterial: "Tasar silk, cotton, ikat dyed", vaLocation: "Odisha",
+    vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 42, title: "Dress", imageFile: "Dress (Bengal.png", accession: "IS.100 to B-1985",
+    vaUrl: "https://collections.vam.ac.uk/item/O453953/dress-unknown/",
+    vaObjectType: "Dress", vaMaterial: "Tasar silk", vaLocation: "West Bengal",
+    vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  /* id 43 (Silk yarn jhurri, IS.23:1 to 3-2015) merged into id 71 on 2026-05-19
+     — visually identical photo to the IS.16–22 series; consolidated. */
+
+  { id: 44, title: "Hanging", imageFile: "O481849.jpg", accession: "IS.157-1953",
+    vaUrl: "https://collections.vam.ac.uk/item/O481849/hanging-unknown/",
+    vaObjectType: "Hanging", vaMaterial: "Embroidered cotton with yellow tussah silks in chain stitch and back stitch",
+    vaLocation: "West Bengal", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  /* ----- NEW: 19th-C India Museum wave additions ----- */
+
+  { id: 45, title: "Wrapped Garment", imageFile: "O476263.jpg", accession: "7510(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O476263/",
+    vaObjectType: "Wrapped Garment", vaMaterial: "Wild silk, saffron-coloured with grey borders and terracotta-coloured bands at ends",
+    vaLocation: "West Bengal", vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 46, title: "Wrapped garment", imageFile: "O477733.jpg", accession: "5091(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O477733/",
+    vaObjectType: "Wrapped garment", vaMaterial: "Silk, woven", vaLocation: "Assam",
+    vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 47, title: "Coverlet", imageFile: "O105355.jpg", accession: "6560(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O105355/",
+    vaObjectType: "Coverlet", vaMaterial: "Cotton, woven and embroidered (with undyed tussar silk)",
+    vaLocation: "Assam", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  { id: 48, title: "Textile", imageFile: "O478648.jpg", accession: "8204(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O478648/",
+    vaObjectType: "Textile", vaMaterial: "Silk, woven", vaLocation: "Assam",
+    vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  { id: 49, title: "Fragment", imageFile: "O477761.jpg", accession: "8848(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O477761/",
+    vaObjectType: "Fragment", vaMaterial: "Silk (Textile), Woven (cotton seersucker with undyed tussar silk)",
+    vaLocation: "Bangladesh", vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  { id: 50, title: "Turban", imageFile: "O476014.jpg", accession: "870-1872",
+    vaUrl: "https://collections.vam.ac.uk/item/O476014/",
+    vaObjectType: "Turban", vaMaterial: "White muslin rumal embroidered with tasar or muga silk in chainstitch, wrapped around a skull cap of red, blue, orange and white cotton",
+    vaLocation: "West Bengal", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 51, title: "Tasar Silk", imageFile: "O477447.jpg", accession: "7793(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O477447/",
+    vaObjectType: "Tasar Silk", vaMaterial: "Silk (Textile), Woven (plain tussur silk)", vaLocation: "Telangana",
+    vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  { id: 52, title: "Sample", imageFile: "O476361.jpg", accession: "7421(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O476361/",
+    vaObjectType: "Sample", vaMaterial: "Woven cotton and tussar silk", vaLocation: "Uttar Pradesh",
+    vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 53, title: "Textile", imageFile: "O480627.jpg", accession: "7342(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O480627/",
+    vaObjectType: "Textile", vaMaterial: "Silk, woven (unbleached tussar with broad pink stripes)",
+    vaLocation: "Bihar", vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 54, title: "Scarf", imageFile: "O471646.jpg", accession: "05736(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O471646/",
+    vaObjectType: "Scarf", vaMaterial: "Woven silk", vaLocation: "Maharashtra",
+    vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  { id: 55, title: "Garment", imageFile: "O477635.jpg", accession: "6108(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O477635/",
+    vaObjectType: "Garment", vaMaterial: "Silk, woven (light tussar silk in green with narrow yellow borders)",
+    vaLocation: "Gujarat", vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 56, title: "Textile", imageFile: "O454095.jpg", accession: "05739:1(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O454095/",
+    vaObjectType: "Textile", vaMaterial: "Silk, woven (two lengths of unbleached tussar silk)",
+    vaLocation: "West Bengal", vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  { id: 57, title: "Textile", imageFile: "", accession: "4733(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O446319/",
+    vaObjectType: "Textile", vaMaterial: "Silk, woven (cut pieces of unbleached tussar silk)",
+    vaLocation: "India", vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  /* ----- NEW: Lucknow chikan with tasar / muga silk ----- */
+
+  { id: 58, title: "Chikankari Sari", imageFile: "O1135378.jpg", accession: "IS.5-2009",
+    vaUrl: "https://collections.vam.ac.uk/item/O1135378/",
+    vaObjectType: "Chikankari Sari", vaMaterial: "Cotton, woven, embroidered with cotton and silk (brown tussar or muga silk)",
+    vaLocation: "Uttar Pradesh", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  { id: 59, title: "Robe", imageFile: "O438351.jpg", accession: "IS.20-2008",
+    vaUrl: "https://collections.vam.ac.uk/item/O438351/",
+    vaObjectType: "Robe", vaMaterial: "Cotton, embroidered with cotton and tussar silk thread",
+    vaLocation: "Uttar Pradesh", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  { id: 60, title: "Textile (chikan)", imageFile: "O478963.jpg", accession: "IS.57&A-1968",
+    vaUrl: "https://collections.vam.ac.uk/item/O478963/",
+    vaObjectType: "Textile", vaMaterial: "Muslin, woven, embroidered with cotton and tussar silk",
+    vaLocation: "Uttar Pradesh", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  { id: 61, title: "Sample (chikan)", imageFile: "O478962.jpg", accession: "IS.59-1968",
+    vaUrl: "https://collections.vam.ac.uk/item/O478962/",
+    vaObjectType: "Sample", vaMaterial: "Muslin, woven, embroidered with cotton and silk (muga + tussah outlining)",
+    vaLocation: "Uttar Pradesh", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  { id: 62, title: "Sample (chikan)", imageFile: "O126929.jpg", accession: "IS.58-1968",
+    vaUrl: "https://collections.vam.ac.uk/item/O126929/",
+    vaObjectType: "Sample", vaMaterial: "Cotton muslin, woven, embroidered with cotton and muga silk thread and tussar silk",
+    vaLocation: "Uttar Pradesh", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  /* ----- NEW: pre-1855 Bengal — earliest pieces in the archive ----- */
+
+  { id: 63, title: "Bag (silk samples)", imageFile: "O453952.jpg", accession: "IS.57 to L-1990",
+    vaUrl: "https://collections.vam.ac.uk/item/O453952/",
+    vaObjectType: "Bag", vaMaterial: "Silk and paper (tasar — ghicha / jhurri / nassi / katia samples)",
+    vaLocation: "West Bengal", vaTechniqueBucket: "", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  { id: 64, title: "Bedspread", imageFile: "O481831.jpg", accession: "IS.6-1964",
+    vaUrl: "https://collections.vam.ac.uk/item/O481831/",
+    vaObjectType: "Bedspread", vaMaterial: "Quilted cotton embroidered with silk (tussar)",
+    vaLocation: "West Bengal", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  /* ----- NEW: Bengal printed handkerchief ----- */
+
+  { id: 65, title: "Handkerchief", imageFile: "O166169.jpg", accession: "IS.17-2008",
+    vaUrl: "https://collections.vam.ac.uk/item/O166169/",
+    vaObjectType: "Handkerchief", vaMaterial: "Printed silk (block-printed floral motifs on tussar silk)",
+    vaLocation: "West Bengal", vaTechniqueBucket: "Print", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 66, title: "Shoulder cloth", imageFile: "O453971.jpg", accession: "IS.3-1988",
+    vaUrl: "https://collections.vam.ac.uk/item/O453971/",
+    vaObjectType: "Shoulder cloth", vaMaterial: "Embroidered silk with cotton, ikat dyed (plain tasar silk + embroidered cotton)",
+    vaLocation: "Odisha", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  /* ----- NEW: contemporary Indian designer ----- */
+
+  { id: 67, title: "Sari and blouse (Pebble stream sari)", imageFile: "O1257159.jpg", accession: "IS.21:1, 2-2012",
+    vaUrl: "https://collections.vam.ac.uk/item/O1257159/",
+    vaObjectType: "Sari and blouse", vaMaterial: "Tasar silk with sujni embroidery using yellow cotton thread",
+    vaLocation: "Bihar", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  { id: 68, title: "Sari (Moon sari)", imageFile: "O1307261.jpg", accession: "IS.3:1,2-2015",
+    vaUrl: "https://collections.vam.ac.uk/item/O1307261/",
+    vaObjectType: "Sari", vaMaterial: "Tasar silk, clamp-dyed", vaLocation: "Gujarat",
+    vaTechniqueBucket: "", vaDyeBucket: "Dyed", vaSection: "Indian wild silk" },
+
+  { id: 69, title: "Coat (Asha Sarabhai, Raag)", imageFile: "O470828.jpg", accession: "IS.9-1995",
+    vaUrl: "https://collections.vam.ac.uk/item/O470828/",
+    vaObjectType: "Coat", vaMaterial: "Tasar silk, natural coloured base and cream tasar silk panels (appliqué)",
+    vaLocation: "Gujarat", vaTechniqueBucket: "", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  { id: 70, title: "Suit (Abraham & Thakore)", imageFile: "O1307781.jpg", accession: "IS.6-2015",
+    vaUrl: "https://collections.vam.ac.uk/item/O1307781/",
+    vaObjectType: "Suit", vaMaterial: "Handwoven, naturally-coloured tasar silk (tunic + coat); mulberry silk (trousers)",
+    vaLocation: "Uttar Pradesh", vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  /* ----- Silk yarn series IS.16 → IS.22-2015 — V&A holds 7 separate accessions
+     of the same handspun tasar yarn type (sister pieces to id 43).
+     Consolidated 2026-05-19 into a single card; primary record is IS.16:1,2-2015.
+     Note: IS.20 record specifies "balkal nassi" variant. ----- */
+
+  { id: 71, title: "Silk yarn", imageFile: "O1307792.jpg",
+    accession: "IS.16:1,2 / IS.17:1-3 / IS.18:1-18 / IS.19:1,2 / IS.20:1-5 / IS.21:1-6 / IS.22:1-3 / IS.23:1-3 (2015)",
+    vaUrl: "https://collections.vam.ac.uk/item/O1307792/",
+    vaObjectType: "Silk yarn", vaMaterial: "Handspun tasar silk yarn (Tussah; IS.20 specifies balkal nassi variant; IS.23 specifies jhurri variant)", vaLocation: "India",
+    vaTechniqueBucket: "", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+  /* ----- NEW: pre-1855 Bengal embroidery on muslin (made in England) ----- */
+  /* (kept in Indian wild silk because silk is Indian even though dress
+      construction is English) */
+
+  { id: 78, title: "Dress", imageFile: "O88599.jpg", accession: "T.220&A-1962",
+    vaUrl: "https://collections.vam.ac.uk/item/O88599/",
+    vaObjectType: "Dress", vaMaterial: "Cotton muslin embroidered with tussar silk thread",
+    vaLocation: "West Bengal", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed", vaSection: "Indian wild silk" },
+
+
+  /* ============================================================
+     SECTION 2 — BRITISH / INDIAN WILD SILK
+     (British-made objects using Indian wild silk —
+      Wardle / Leek Embroidery Society / Morris circle)
+     ============================================================ */
+
+  { id: 4, title: "Allahabad Marigold", imageFile: "Allahabad Marigold .png", accession: "AP 74(2)-1879",
+    vaUrl: "https://collections.vam.ac.uk/item/O152571/allahabad-marigold-furnishing-fabric-thomas-wardle/",
+    vaObjectType: "Furnishing Fabric", vaMaterial: "Silk (Textile), Block Printing", vaLocation: "England",
+    vaTechniqueBucket: "Print", vaDyeBucket: "Dyed", vaSection: "British / Indian wild silk" },
+
+  { id: 35, title: "Chair cover", imageFile: "Chair cover.png", accession: "4554(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O477396/chair-cover-leek-embroidery-society/",
+    vaObjectType: "Chair cover",
+    vaMaterial: "Silk (Textile), Floss Silk, Gold-Wrapped Thread, woven and embroidered",
+    vaLocation: "England", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Dyed", vaSection: "British / Indian wild silk" },
+
+  { id: 36, title: "Shawl", imageFile: "Shawl (GB .png", accession: "T.344-1996",
+    vaUrl: "https://collections.vam.ac.uk/item/O350738/shawl-unknown/",
+    vaObjectType: "Shawl", vaMaterial: "Embroidered silk, possibly tasar", vaLocation: "Great Britain / India",
+    vaTechniqueBucket: "Embroidery", vaDyeBucket: "Dyed", vaSection: "British / Indian wild silk" },
+
+  /* British / Indian wild silk — Morris × Wardle / Wardle for Liberty's.
+     All materials below are V&A's verbatim physicalDescription field. */
+
+  { id: 79, title: "Marigold", imageFile: "O73362.jpg", accession: "CIRC.496-1965",
+    vaUrl: "https://collections.vam.ac.uk/item/O73362/",
+    vaObjectType: "Furnishing fabric", vaMaterial: "Furnishing fabric of block-printed silk. With a repeating floral motif of marigolds in dull yellow on natural silk twill.",
+    vaLocation: "England", vaTechniqueBucket: "Print", vaDyeBucket: "Dyed", vaSection: "British / Indian wild silk", vaDate: "1875" },
+
+  { id: 80, title: "Salangore", imageFile: "O152568.jpg", accession: "CIRC.499-1965",
+    vaUrl: "https://collections.vam.ac.uk/item/O152568/",
+    vaObjectType: "Dress fabric", vaMaterial: "Dress fabric of block-printed natural tusser silk in blue.",
+    vaLocation: "England", vaTechniqueBucket: "Print", vaDyeBucket: "Dyed", vaSection: "British / Indian wild silk", vaDate: "ca. 1878" },
+
+  { id: 81, title: "Marigold", imageFile: "O266128.jpg", accession: "CIRC.484-1965",
+    vaUrl: "https://collections.vam.ac.uk/item/O266128/",
+    vaObjectType: "Furnishing fabric", vaMaterial: "Furnishing fabric of printed tussah silk in yellow.",
+    vaLocation: "England", vaTechniqueBucket: "Print", vaDyeBucket: "Dyed", vaSection: "British / Indian wild silk", vaDate: "1875" },
+
+  { id: 82, title: "Honeysuckle", imageFile: "O270991.jpg", accession: "CIRC.488-1965",
+    vaUrl: "https://collections.vam.ac.uk/item/O270991/",
+    vaObjectType: "Furnishing fabric", vaMaterial: "Furnishing fabric of printed tussah silk in green.",
+    vaLocation: "England", vaTechniqueBucket: "Print", vaDyeBucket: "Dyed", vaSection: "British / Indian wild silk", vaDate: "1876" },
+
+  /* Wardle Tanjore Lotus series, ca. 1880 (IS.45–IS.53 + A-variants).
+     Woven in India + dyed at Leek by Thomas Wardle, sold via Liberty & Co.
+     17 accessions consolidated 2026-05-19 into a single card representing the
+     full series across all colourways: light blue, light red, dark red, light
+     bronze, green, gold, bronze, blue, salmon. Primary record IS.53A-1881
+     (group photo showing the colour range). Note: IS.53-1881 is indexed under
+     "tusser" by V&A but its materials field says "Silk damask" only. */
+
+  { id: 83, title: "Tanjore Lotus (Wardle series)", imageFile: "O477969.jpg",
+    accession: "IS.45 / IS.45A / IS.46 / IS.46A / IS.47 / IS.47A / IS.48 / IS.48A / IS.49 / IS.49A / IS.50 / IS.50A / IS.51 / IS.51A / IS.52 / IS.52A / IS.53 / IS.53A — 1881",
+    vaUrl: "https://collections.vam.ac.uk/item/O477969/",
+    vaObjectType: "Textile", vaMaterial: "Figured Tusser silk in 9 colourways (light blue, light red, dark red, light bronze, green, gold, bronze, blue, salmon); each colour exists as a single piece and a 'two pieces' A-variant. Woven in India, dyed at Leek by Thomas Wardle, sold via Liberty & Co.",
+    vaLocation: "India / England", vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed", vaSection: "British / Indian wild silk", vaDate: "ca. 1880" },
+
+
+  /* ============================================================
+     SECTION 3 — EUROPEAN TUSSORE / CHINESE TUSSAH
+     (Western fashion / decorative arts using "tussore" or
+      "tussah" — silk origin typically Chinese Antheraea pernyi,
+      not Indian tasar. Kept for completeness of spelling-variant
+      audit. V&A does not always specify silk source.)
+     ============================================================ */
+
+  { id: 41, title: "Hanging (Dinah Prentice)", imageFile: "Perspective Drawing .png", accession: "T.2-1987",
+    vaUrl: "https://collections.vam.ac.uk/item/O367410/perspective-drawing-prentice-dinah/",
+    vaObjectType: "Hanging", vaMaterial: "Tussah and wild silk, painted and lined with calico",
+    vaLocation: "England", vaTechniqueBucket: "", vaDyeBucket: "Undyed", vaSection: "European tussore / Chinese tussah" },
+
+  /* id 84 (Fashion design O536553) removed 2026-05-19 — pen-and-ink-and-
+     watercolour DRAWING of a tussore dress, not the textile itself.
+     Archive scope is wild silk fabric / objects made from it, not depictions. */
+
+  /* ---- European tussore / Chinese tussah full sweep (added 2026-05-18) ---- */
+
+  { id: 107, title: "Parasol, beige tussah silk, England, 1860s", imageFile: "O1140138.jpg", accession: "T.206B-1915",
+    vaUrl: "https://collections.vam.ac.uk/item/O1140138/",
+    vaObjectType: "Parasol", vaMaterial: "silk, wood, steel",
+    vaLocation: "England", vaTechniqueBucket: "", vaDyeBucket: "Dyed",
+    vaSection: "European tussore / Chinese tussah", vaDate: "1860s" },
+
+  { id: 108, title: "Table cloth", imageFile: "O315889.jpg", accession: "T.231-1981",
+    vaUrl: "https://collections.vam.ac.uk/item/O315889/",
+    vaObjectType: "Table cloth", vaMaterial: "Silk embroidered in silk and gold threads",
+    vaLocation: "England", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Dyed",
+    vaSection: "European tussore / Chinese tussah", vaDate: "1882-1888" },
+
+  { id: 109, title: "Mantle of tussore silk and lace", imageFile: "", accession: "T.30-1966",
+    vaUrl: "https://collections.vam.ac.uk/item/O356007/",
+    vaObjectType: "Mantle", vaMaterial: "Tussore silk and machine-made lace",
+    vaLocation: "England", vaTechniqueBucket: "", vaDyeBucket: "Dyed",
+    vaSection: "European tussore / Chinese tussah", vaDate: "ca. 1885" },
+
+  { id: 110, title: "Girl's pelisse", imageFile: "", accession: "",
+    vaUrl: "https://collections.vam.ac.uk/item/O1123619/",
+    vaObjectType: "Girl's pelisse", vaMaterial: "(materials not listed in V&A record — record indexed under tussore)",
+    vaLocation: "England", vaTechniqueBucket: "", vaDyeBucket: "Dyed",
+    vaSection: "European tussore / Chinese tussah", vaDate: "ca. 1885" },
+
+  { id: 111, title: "Embroidered silk panel in gold thread and silks", imageFile: "O124675.jpg", accession: "T.325-1982",
+    vaUrl: "https://collections.vam.ac.uk/item/O124675/",
+    vaObjectType: "Panel", vaMaterial: "Embroidered silk in gold thread and silks",
+    vaLocation: "England", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Dyed",
+    vaSection: "European tussore / Chinese tussah", vaDate: "ca. 1885" },
+
+  { id: 112, title: "Woman's cloak in cinnamon figured silk damask", imageFile: "O362540.jpg", accession: "T.32-1987",
+    vaUrl: "https://collections.vam.ac.uk/item/O362540/",
+    vaObjectType: "Cloak", vaMaterial: "silk (textile), tussah silk, metal",
+    vaLocation: "Great Britain", vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed",
+    vaSection: "European tussore / Chinese tussah", vaDate: "ca. 1900" },
+
+  { id: 113, title: "Sample book of casement blinds", imageFile: "O294309.jpg", accession: "T.26-1982",
+    vaUrl: "https://collections.vam.ac.uk/item/O294309/",
+    vaObjectType: "Sample book", vaMaterial: "Wool, silk, cotton, linen and printed",
+    vaLocation: "Great Britain", vaTechniqueBucket: "", vaDyeBucket: "Dyed",
+    vaSection: "European tussore / Chinese tussah", vaDate: "ca. 1900" },
+
+  { id: 114, title: "Casement Cloths", imageFile: "O294290.jpg", accession: "",
+    vaUrl: "https://collections.vam.ac.uk/item/O294290/",
+    vaObjectType: "Sample book", vaMaterial: "Wool, cotton and silk",
+    vaLocation: "Great Britain", vaTechniqueBucket: "", vaDyeBucket: "Dyed",
+    vaSection: "European tussore / Chinese tussah", vaDate: "ca. 1900" },
+
+  /* ids 115, 116 (Fashion design O536085, O536109) removed 2026-05-19 —
+     pen-and-ink-and-watercolour DRAWINGS titled "Tussor", not actual textiles. */
+
+  { id: 117, title: "Afternoon dress of figured silk", imageFile: "O366064.jpg", accession: "",
+    vaUrl: "https://collections.vam.ac.uk/item/O366064/",
+    vaObjectType: "Dress", vaMaterial: "Silk, silk chiffon, velvet, lined with silk",
+    vaLocation: "London", vaTechniqueBucket: "", vaDyeBucket: "Dyed",
+    vaSection: "European tussore / Chinese tussah", vaDate: "1916-1918" },
+
+  { id: 118, title: "Sample exercise book of vat dyed silk, cotton and rayon yarns", imageFile: "O293170.jpg", accession: "",
+    vaUrl: "https://collections.vam.ac.uk/item/O293170/",
+    vaObjectType: "Sample book", vaMaterial: "Vat dyed silk, cotton and rayon yarns",
+    vaLocation: "Great Britain", vaTechniqueBucket: "", vaDyeBucket: "Dyed",
+    vaSection: "European tussore / Chinese tussah", vaDate: "1921-1922" },
+
+  { id: 119, title: "Wedding dress", imageFile: "O251274.jpg", accession: "T.212 to B-1987",
+    vaUrl: "https://collections.vam.ac.uk/item/O251274/",
+    vaObjectType: "Wedding dress", vaMaterial: "Satin lined with silk tussah, metal-embroidered chiffon, glass beads and seed pearls",
+    vaLocation: "Great Britain", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Dyed",
+    vaSection: "European tussore / Chinese tussah", vaDate: "1923" },
+
+  { id: 120, title: "Man's smoking suit", imageFile: "O139038.jpg", accession: "",
+    vaUrl: "https://collections.vam.ac.uk/item/O139038/",
+    vaObjectType: "Smoking suit", vaMaterial: "Tussah silk",
+    vaLocation: "Great Britain", vaTechniqueBucket: "", vaDyeBucket: "Dyed",
+    vaSection: "European tussore / Chinese tussah", vaDate: "ca. 1925" },
+
+  { id: 121, title: "Parasol", imageFile: "O139673.jpg", accession: "",
+    vaUrl: "https://collections.vam.ac.uk/item/O139673/",
+    vaObjectType: "Parasol", vaMaterial: "Tussah silk, metal, wood",
+    vaLocation: "Belgium", vaTechniqueBucket: "", vaDyeBucket: "Dyed",
+    vaSection: "European tussore / Chinese tussah", vaDate: "ca. 1925" },
+
+  { id: 122, title: "Bar", imageFile: "O75379.jpg", accession: "T.376&A-1960",
+    vaUrl: "https://collections.vam.ac.uk/item/O75379/",
+    vaObjectType: "Skirt suit", vaMaterial: "Plain woven silk tussore, pleated wool crêpe, stiffened taffeta, lined with silk, padded",
+    vaLocation: "France", vaTechniqueBucket: "", vaDyeBucket: "Dyed",
+    vaSection: "European tussore / Chinese tussah", vaDate: "1947 spring/summer (remade by Dior about 1955)" },
+
+  { id: 123, title: "Miniature afternoon dress", imageFile: "O130976.jpg", accession: "T.19-2007",
+    vaUrl: "https://collections.vam.ac.uk/item/O130976/",
+    vaObjectType: "Miniature dress", vaMaterial: "tussah silk",
+    vaLocation: "France", vaTechniqueBucket: "", vaDyeBucket: "Dyed",
+    vaSection: "European tussore / Chinese tussah", vaDate: "ca. 1950" },
+
+  { id: 126, title: "Hand stencilled tussah silk curtain", imageFile: "O79350.jpg", accession: "",
+    vaUrl: "https://collections.vam.ac.uk/item/O79350/",
+    vaObjectType: "Curtain", vaMaterial: "tussah silk, Cotton, metal",
+    vaLocation: "England", vaTechniqueBucket: "Print", vaDyeBucket: "Dyed",
+    vaSection: "European tussore / Chinese tussah", vaDate: "1950s" },
+
+  { id: 127, title: "Skirt suit", imageFile: "O109255.jpg", accession: "T.118A-1970",
+    vaUrl: "https://collections.vam.ac.uk/item/O109255/",
+    vaObjectType: "Skirt suit", vaMaterial: "wool, silk (textile), linen",
+    vaLocation: "France", vaTechniqueBucket: "", vaDyeBucket: "Dyed",
+    vaSection: "European tussore / Chinese tussah", vaDate: "February 1956" },
+
+  { id: 128, title: "Violette", imageFile: "O131515.jpg", accession: "T.144-1998",
+    vaUrl: "https://collections.vam.ac.uk/item/O131515/",
+    vaObjectType: "Cocktail dress", vaMaterial: "silk tussah and synthetic fabric",
+    vaLocation: "England", vaTechniqueBucket: "", vaDyeBucket: "Dyed",
+    vaSection: "European tussore / Chinese tussah", vaDate: "1967" },
+
+  { id: 129, title: "Hanging (tasar silk)", imageFile: "O367418.jpg", accession: "T.432-1980",
+    vaUrl: "https://collections.vam.ac.uk/item/O367418/",
+    vaObjectType: "Hanging", vaMaterial: "tasar silk",
+    vaLocation: "Great Britain", vaTechniqueBucket: "", vaDyeBucket: "",
+    vaSection: "British / Indian wild silk", vaDate: "1980" },
+
+  { id: 130, title: "Purse", imageFile: "O84586.jpg", accession: "",
+    vaUrl: "https://collections.vam.ac.uk/item/O84586/",
+    vaObjectType: "Purse", vaMaterial: "Silk tussah and ribbon",
+    vaLocation: "Great Britain", vaTechniqueBucket: "", vaDyeBucket: "Dyed",
+    vaSection: "European tussore / Chinese tussah", vaDate: "1996" },
+
+  { id: 131, title: "Girl's A-line green tussor silk dress with round neck and short flaring sleeves", imageFile: "", accession: "",
+    vaUrl: "https://collections.vam.ac.uk/item/O1788617/",
+    vaObjectType: "Dress", vaMaterial: "Silk",
+    vaLocation: "Glasgow School of Art style", vaTechniqueBucket: "", vaDyeBucket: "Dyed",
+    vaSection: "European tussore / Chinese tussah", vaDate: "About 1900" },
+
+  /* ---- Additional Indian wild silk items from q=wild+silk sweep (added 2026-05-18) ---- */
+
+  { id: 132, title: "Mosquito netting", imageFile: "O478724.jpg", accession: "",
+    vaUrl: "https://collections.vam.ac.uk/item/O478724/",
+    vaObjectType: "Mosquito netting", vaMaterial: "wild silk",
+    vaLocation: "West Bengal", vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed",
+    vaSection: "Indian wild silk", vaDate: "ca. 1855" },
+
+  { id: 133, title: "Mosquito netting", imageFile: "O476457.jpg", accession: "",
+    vaUrl: "https://collections.vam.ac.uk/item/O476457/",
+    vaObjectType: "Mosquito netting", vaMaterial: "wild silk",
+    vaLocation: "West Bengal", vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed",
+    vaSection: "Indian wild silk", vaDate: "ca. 1855" },
+
+  { id: 136, title: "Scarf", imageFile: "O477714.jpg", accession: "",
+    vaUrl: "https://collections.vam.ac.uk/item/O477714/",
+    vaObjectType: "Scarf", vaMaterial: "silk (textile)",
+    vaLocation: "Assam", vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed",
+    vaSection: "Indian wild silk", vaDate: "c.1855" },
+
+  { id: 137, title: "Pieces of a silk skirt or petticoat", imageFile: "O453957.jpg", accession: "",
+    vaUrl: "https://collections.vam.ac.uk/item/O453957/",
+    vaObjectType: "Garment", vaMaterial: "Silk, woven and embroidered",
+    vaLocation: "Assam", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Dyed",
+    vaSection: "Indian wild silk", vaDate: "ca. 1855" },
+
+  { id: 138, title: "Wrapped garment", imageFile: "O477713.jpg", accession: "",
+    vaUrl: "https://collections.vam.ac.uk/item/O477713/",
+    vaObjectType: "Wrapped garment", vaMaterial: "Silk, woven",
+    vaLocation: "Assam", vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed",
+    vaSection: "Indian wild silk", vaDate: "ca. 1855" },
+
+  { id: 139, title: "Dress fabric", imageFile: "O73356.jpg", accession: "",
+    vaUrl: "https://collections.vam.ac.uk/item/O73356/",
+    vaObjectType: "Dress fabric", vaMaterial: "Silk (textile)",
+    vaLocation: "India / England", vaTechniqueBucket: "Print", vaDyeBucket: "Dyed",
+    vaSection: "British / Indian wild silk", vaDate: "ca. 1875" },
+
+  { id: 140, title: "Dress fabric", imageFile: "O73354.jpg", accession: "",
+    vaUrl: "https://collections.vam.ac.uk/item/O73354/",
+    vaObjectType: "Dress fabric", vaMaterial: "silk (textile)",
+    vaLocation: "India / England", vaTechniqueBucket: "Print", vaDyeBucket: "Dyed",
+    vaSection: "British / Indian wild silk", vaDate: "ca. 1878" },
+
+  /* id 141 (Hunting coat IS.18-1947) removed 2026-05-18 — V&A record
+     specifies only "satin" + "silk" with no tusser/tussore/eri/muga mention;
+     Mughal-era embroidered satin is almost certainly mulberry silk. */
+
+  /* ============================================================
+     ADDITIONS 2026-05-18 — V&A spelling-variant sweep (tusser / muga / eri)
+     All entries verbatim per V&A API records.
+     ============================================================ */
+
+  /* ---- Eri Silk: explicit "Eri Silk" titled records ---- */
+
+  { id: 142, title: "Eri Silk", imageFile: "O477271.jpg", accession: "5512(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O477271/",
+    vaObjectType: "Eri Silk", vaMaterial: "silk (textile)",
+    vaLocation: "Bangladesh", vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed",
+    vaSection: "Indian wild silk", vaDate: "ca. 1867" },
+
+  { id: 143, title: "Eri Silk", imageFile: "O476270.jpg", accession: "7357(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O476270/",
+    vaObjectType: "Eri Silk", vaMaterial: "silk (textile)",
+    vaLocation: "Bangladesh", vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed",
+    vaSection: "Indian wild silk", vaDate: "ca. 1867" },
+
+  /* ---- Eri silk: items with "eri silk" verbatim in materials ---- */
+
+  { id: 144, title: "Girdle", imageFile: "O105918.jpg", accession: "5092(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O105918/",
+    vaObjectType: "Girdle", vaMaterial: "eri silk",
+    vaLocation: "Bhutan", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Dyed",
+    vaSection: "Indian wild silk", vaDate: "ca. 1855" },
+
+  { id: 145, title: "Tunic", imageFile: "O105588.jpg", accession: "05535(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O105588/",
+    vaObjectType: "Tunic", vaMaterial: "eri silk",
+    vaLocation: "Assam", vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed",
+    vaSection: "Indian wild silk", vaDate: "ca. 1855" },
+
+  { id: 146, title: "Shawl", imageFile: "O105369.jpg", accession: "5094(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O105369/",
+    vaObjectType: "Shawl", vaMaterial: "eri silk",
+    vaLocation: "Assam", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Dyed",
+    vaSection: "Indian wild silk", vaDate: "ca. 1855" },
+
+  { id: 147, title: "Textile", imageFile: "O440663.jpg", accession: "5549(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O440663/",
+    vaObjectType: "Textile", vaMaterial: "eri silk",
+    vaLocation: "Assam", vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed",
+    vaSection: "Indian wild silk", vaDate: "ca. 1855" },
+
+  { id: 148, title: "Sash", imageFile: "O480607.jpg", accession: "5104(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O480607/",
+    vaObjectType: "Sash", vaMaterial: "silk (V&A brief: eri silk, Darjeeling)",
+    vaLocation: "West Bengal", vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed",
+    vaSection: "Indian wild silk", vaDate: "ca. 1855" },
+
+  { id: 149, title: "Shawl (chadar)", imageFile: "O106276.jpg", accession: "05679(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O106276/",
+    vaObjectType: "Shawl", vaMaterial: "endi silk",
+    vaLocation: "Nepal", vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed",
+    vaSection: "Indian wild silk", vaDate: "ca. 1855" },
+
+  /* ---- Muga silk: items with "muga" / "muga silk" verbatim ---- */
+
+  { id: 150, title: "Wrapped garment", imageFile: "O478809.jpg", accession: "8843(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O478809/",
+    vaObjectType: "Wrapped garment", vaMaterial: "silk (textile), muga, muslin, cotton (textile)",
+    vaLocation: "Bangladesh", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed",
+    vaSection: "Indian wild silk", vaDate: "c.1855" },
+
+  { id: 151, title: "Wrapped garment", imageFile: "O477362.jpg", accession: "5893(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O477362/",
+    vaObjectType: "Wrapped garment", vaMaterial: "silk (textile), muga",
+    vaLocation: "West Bengal", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed",
+    vaSection: "Indian wild silk", vaDate: "ca. 1855-1879" },
+
+  { id: 152, title: "Scarf", imageFile: "O477361.jpg", accession: "5894(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O477361/",
+    vaObjectType: "Scarf", vaMaterial: "silk (textile), muga, cotton (textile)",
+    vaLocation: "Bangladesh", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed",
+    vaSection: "Indian wild silk", vaDate: "c.1855" },
+
+  { id: 153, title: "Rumal", imageFile: "O110079.jpg", accession: "6038(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O110079/",
+    vaObjectType: "Rumal", vaMaterial: "muslin, muga",
+    vaLocation: "Bangladesh", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed",
+    vaSection: "Indian wild silk", vaDate: "c.1855" },
+
+  { id: 154, title: "Rumal", imageFile: "O477331.jpg", accession: "8357(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O477331/",
+    vaObjectType: "Rumal", vaMaterial: "cotton (textile), muslin, muga, silk (textile)",
+    vaLocation: "Bangladesh", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed",
+    vaSection: "Indian wild silk", vaDate: "ca. 1855-1879" },
+
+  { id: 155, title: "Waistcloth", imageFile: "O453594.jpg", accession: "5524(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O453594/",
+    vaObjectType: "Waistcloth", vaMaterial: "muga silk",
+    vaLocation: "Assam", vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed",
+    vaSection: "Indian wild silk", vaDate: "ca. 1855" },
+
+  { id: 156, title: "Embroidered Muslin", imageFile: "O477364.jpg", accession: "5888(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O477364/",
+    vaObjectType: "Embroidered Muslin", vaMaterial: "muga, silk (textile), muslin",
+    vaLocation: "Bangladesh", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed",
+    vaSection: "Indian wild silk", vaDate: "c.1855" },
+
+  { id: 157, title: "Textile", imageFile: "O475469.jpg", accession: "IND.LOST.577",
+    vaUrl: "https://collections.vam.ac.uk/item/O475469/",
+    vaObjectType: "Textile", vaMaterial: "muga silk",
+    vaLocation: "Assam", vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed",
+    vaSection: "Indian wild silk", vaDate: "ca. 1855 - 1879" },
+
+  { id: 158, title: "Dhoti", imageFile: "O476632.jpg", accession: "8199(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O476632/",
+    vaObjectType: "Dhoti", vaMaterial: "Muga silk",
+    vaLocation: "Assam", vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed",
+    vaSection: "Indian wild silk", vaDate: "ca. 1855-1879" },
+
+  { id: 159, title: "Garment", imageFile: "O453940.jpg", accession: "05729(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O453940/",
+    vaObjectType: "Garment", vaMaterial: "muga silk",
+    vaLocation: "Assam", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Dyed",
+    vaSection: "Indian wild silk", vaDate: "ca. 1855-1879" },
+
+  { id: 160, title: "Mosquito curtain", imageFile: "O453944.jpg", accession: "7508(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O453944/",
+    vaObjectType: "Mosquito curtain", vaMaterial: "muga silk, cotton (textile)",
+    vaLocation: "Assam", vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed",
+    vaSection: "Indian wild silk", vaDate: "ca. 1855" },
+
+  /* ---- Muga: contemporary designer (Sarabhai/Raag pair to id 69) ---- */
+
+  { id: 161, title: "Shirt", imageFile: "O123069.jpg", accession: "IS.21-1995",
+    vaUrl: "https://collections.vam.ac.uk/item/O123069/",
+    vaObjectType: "Shirt", vaMaterial: "Muga silk",
+    vaLocation: "Gujarat", vaTechniqueBucket: "", vaDyeBucket: "Undyed",
+    vaSection: "Indian wild silk", vaDate: "1994-1995" },
+
+  /* ---- British / Indian wild silk: Wardle / Leek additions ---- */
+
+  { id: 162, title: "Dress fabric", imageFile: "O73361.jpg", accession: "CIRC.502-1965",
+    vaUrl: "https://collections.vam.ac.uk/item/O73361/",
+    vaObjectType: "Dress fabric", vaMaterial: "tusser silk",
+    vaLocation: "England", vaTechniqueBucket: "Print", vaDyeBucket: "Dyed",
+    vaSection: "British / Indian wild silk", vaDate: "1878" },
+
+  { id: 163, title: "Chair cover", imageFile: "O477394.jpg", accession: "4560(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O477394/",
+    vaObjectType: "Chair cover", vaMaterial: "silk (textile), floss silk, gold-wrapped thread (V&A brief: tasar silk chair cover, silk ground woven in India, embroidered by Leek Embroidery Society)",
+    vaLocation: "England", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Dyed",
+    vaSection: "British / Indian wild silk", vaDate: "1879" },
+
+  { id: 164, title: "Pulpit cloth", imageFile: "O477398.jpg", accession: "4550(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O477398/",
+    vaObjectType: "Pulpit cloth", vaMaterial: "Velvet and floss silk (V&A brief: tasar silk velvet embroidered with tasar silk floss, Leek School of Embroidery)",
+    vaLocation: "England", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Dyed",
+    vaSection: "British / Indian wild silk", vaDate: "c.1879" },
+
+  /* ============================================================
+     ADDITIONS 2026-05-18 (batch 2) — second sweep through V&A
+     muga / eri / tasar / tussar / tusser candidates.
+     All entries verbatim per V&A API records.
+     ============================================================ */
+
+  /* ---- Muga: Dhaka stripes (1850s) ---- */
+
+  /* Dhaka muga stripes — V&A holds two accessions (4486(IS) full piece, 4546(IS)
+     narrow band) of the same embroidered pattern. Consolidated 2026-05-19. */
+  { id: 165, title: "Textile", imageFile: "O477403.jpg", accession: "4486(IS) / 4546(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O477403/",
+    vaObjectType: "Textile", vaMaterial: "muga silk, cotton (textile)",
+    vaLocation: "Bangladesh", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Dyed",
+    vaSection: "Indian wild silk", vaDate: "c.1855" },
+
+  /* ---- Muga: Chennai skirt (1850s) ---- */
+
+  { id: 167, title: "Textile", imageFile: "O77258.jpg", accession: "8730(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O77258/",
+    vaObjectType: "Textile", vaMaterial: "cotton, muga silk",
+    vaLocation: "India", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed",
+    vaSection: "Indian wild silk", vaDate: "c.1855" },
+
+  /* ---- Eri: Assam / Gauhati (1850s) ---- */
+
+  { id: 168, title: "Textile", imageFile: "", accession: "7361(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O445779/",
+    vaObjectType: "Textile", vaMaterial: "silk (textile)",
+    vaLocation: "Assam", vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed",
+    vaSection: "Indian wild silk", vaDate: "ca. 1855" },
+
+  { id: 169, title: "Garment piece", imageFile: "O477790.jpg", accession: "5114(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O477790/",
+    vaObjectType: "Garment piece", vaMaterial: "eri silk",
+    vaLocation: "Assam", vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed",
+    vaSection: "Indian wild silk", vaDate: "ca. 1855" },
+
+  { id: 170, title: "Textile", imageFile: "O477730.jpg", accession: "5103(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O477730/",
+    vaObjectType: "Textile", vaMaterial: "eri silk",
+    vaLocation: "Assam", vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed",
+    vaSection: "Indian wild silk", vaDate: "ca. 1855" },
+
+  { id: 171, title: "Waistcloth", imageFile: "O455359.jpg", accession: "5110(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O455359/",
+    vaObjectType: "Waistcloth", vaMaterial: "eri silk",
+    vaLocation: "Assam", vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed",
+    vaSection: "Indian wild silk", vaDate: "ca. 1855" },
+
+  { id: 172, title: "Garment", imageFile: "O455542.jpg", accession: "5530(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O455542/",
+    vaObjectType: "Garment", vaMaterial: "eri silk",
+    vaLocation: "Assam", vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed",
+    vaSection: "Indian wild silk", vaDate: "ca. 1855" },
+
+  /* ---- Tussar: Bengal embroidered cotton (19th C) ---- */
+
+  { id: 173, title: "Textile", imageFile: "O477292.jpg", accession: "IS.149-1965",
+    vaUrl: "https://collections.vam.ac.uk/item/O477292/",
+    vaObjectType: "Textile", vaMaterial: "cotton (textile); Embroidered cotton with tussar silk",
+    vaLocation: "West Bengal", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed",
+    vaSection: "Indian wild silk", vaDate: "19th century" },
+
+  /* ---- Tussar / tusser: British work using Indian wild silk ---- */
+
+  { id: 174, title: "Panel", imageFile: "O15292.jpg", accession: "T.38-1953",
+    vaUrl: "https://collections.vam.ac.uk/item/O15292/",
+    vaObjectType: "Panel", vaMaterial: "Embroidered silk with coloured silk and gold threads (V&A physicalDescription: cream tussar silk ground; Leek Embroidery Society kit using Wardle fabric)",
+    vaLocation: "England", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed",
+    vaSection: "British / Indian wild silk", vaDate: "ca. 1892" },
+
+  { id: 175, title: "Bag face", imageFile: "O169076.jpg", accession: "T.18-1982",
+    vaUrl: "https://collections.vam.ac.uk/item/O169076/",
+    vaObjectType: "Bag face", vaMaterial: "Silk (V&A physicalDescription: double cloth woven from two silks, one being tusser in its raw unbleached state)",
+    vaLocation: "Great Britain", vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed",
+    vaSection: "British / Indian wild silk", vaDate: "ca. 1890" },
+
+  /* ---- Tasar: Painted banner, Asia (late 19th C) ---- */
+
+  { id: 176, title: "Banner", imageFile: "O455598.jpg", accession: "IPN.1131",
+    vaUrl: "https://collections.vam.ac.uk/item/O455598/",
+    vaObjectType: "Banner", vaMaterial: "silk (V&A physicalDescription: indigo-dyed tasar silk, gonfalon-shaped, painted both sides with a leaping ram)",
+    vaLocation: "India", vaTechniqueBucket: "Print", vaDyeBucket: "Dyed",
+    vaSection: "Indian wild silk", vaDate: "late 19th century" },
+
+  /* ============================================================
+     ADDITIONS 2026-05-18 (batch 3) — Chennai muga trimmings/skirts,
+     Ethel Mairet eri-and-wool samples, English Tussar moth waste samples.
+     All verbatim per V&A API records.
+     ============================================================ */
+
+  /* ---- Muga: Chennai trimmings + skirts (1850s) ---- */
+
+  { id: 177, title: "Trimming", imageFile: "O477170.jpg", accession: "6059(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O477170/",
+    vaObjectType: "Trimming", vaMaterial: "Muga silk, cotton thread",
+    vaLocation: "India", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed",
+    vaSection: "Indian wild silk", vaDate: "c.1855" },
+
+  { id: 178, title: "Trimming", imageFile: "O477169.jpg", accession: "6063(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O477169/",
+    vaObjectType: "Trimming", vaMaterial: "Muga silk, cotton thread",
+    vaLocation: "India", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed",
+    vaSection: "Indian wild silk", vaDate: "c.1855" },
+
+  /* Chennai muga skirt piece — V&A holds two accessions (6046(IS) and 0456(IS))
+     of the same embroidered pattern. Consolidated 2026-05-19. */
+  { id: 179, title: "Skirt piece", imageFile: "O477172.jpg", accession: "6046(IS) / 0456(IS)",
+    vaUrl: "https://collections.vam.ac.uk/item/O477172/",
+    vaObjectType: "Skirt piece", vaMaterial: "muga silk",
+    vaLocation: "India", vaTechniqueBucket: "Embroidery", vaDyeBucket: "Undyed",
+    vaSection: "Indian wild silk", vaDate: "c.1855" },
+
+  /* ---- Eri: Ethel Mairet hand-woven samples, GB 1935 ----
+     Hand-woven double cloth of vat-dyed Eri silk + Southdown wool.
+     One of the earliest documented uses of Indian eri silk in British
+     studio weaving (Mairet ran the Gospels workshop, Ditchling). */
+
+  /* Ethel Mairet eri+wool double-cloth — V&A holds 4 physically separate
+     accessions of the same fabric (CIRC.166, 166A, 166B, 166C-1937).
+     Consolidated 2026-05-19 into a single entry; primary record is CIRC.166-1937. */
+  { id: 181, title: "Sample", imageFile: "O293817.jpg",
+    accession: "CIRC.166, 166A, 166B, 166C-1937",
+    vaUrl: "https://collections.vam.ac.uk/item/O293817/",
+    vaObjectType: "Sample", vaMaterial: "wool (textile), silk (textile); Hand-woven silk and wool double cloth (V&A physicalDescription: Eri silk vat-dyed and Southdown wool in natural colour)",
+    vaLocation: "Great Britain", vaTechniqueBucket: "Woven", vaDyeBucket: "Dyed",
+    vaSection: "British / Indian wild silk", vaDate: "ca. 1935" },
+
+  /* ---- Tussar moth waste woven in England, ca. 1860 (AP.71 series) ----
+     Six English-woven samples made from imported Indian tussar moth waste.
+     Sample-book provenance from 1879 V&A acquisition. */
+
+  { id: 185, title: "Woven silk", imageFile: "O257719.jpg", accession: "AP.71:1-1879",
+    vaUrl: "https://collections.vam.ac.uk/item/O257719/",
+    vaObjectType: "Woven silk", vaMaterial: "silk (textile); Tussar moth silk in a plain weave",
+    vaLocation: "England", vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed",
+    vaSection: "British / Indian wild silk", vaDate: "ca. 1860" },
+
+  { id: 186, title: "Woven silk", imageFile: "O257718.jpg", accession: "AP.71:2-1879",
+    vaUrl: "https://collections.vam.ac.uk/item/O257718/",
+    vaObjectType: "Woven silk", vaMaterial: "silk (textile); Tussar moth silk woven with a small diaper pattern",
+    vaLocation: "England", vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed",
+    vaSection: "British / Indian wild silk", vaDate: "ca. 1860" },
+
+  { id: 187, title: "Woven silk", imageFile: "O257717.jpg", accession: "AP.71:3-1879",
+    vaUrl: "https://collections.vam.ac.uk/item/O257717/",
+    vaObjectType: "Woven silk", vaMaterial: "silk (textile); Tussar moth silk woven with a small diaper pattern",
+    vaLocation: "England", vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed",
+    vaSection: "British / Indian wild silk", vaDate: "ca. 1860" },
+
+  { id: 188, title: "Woven silk", imageFile: "O257716.jpg", accession: "AP.71:4-1879",
+    vaUrl: "https://collections.vam.ac.uk/item/O257716/",
+    vaObjectType: "Woven silk", vaMaterial: "silk (textile); Tussar moth silk woven with a diaper pattern",
+    vaLocation: "England", vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed",
+    vaSection: "British / Indian wild silk", vaDate: "ca. 1860" },
+
+  { id: 189, title: "Woven silk", imageFile: "O257715.jpg", accession: "AP.71:5-1879",
+    vaUrl: "https://collections.vam.ac.uk/item/O257715/",
+    vaObjectType: "Woven silk", vaMaterial: "silk (textile); Tussar moth silk woven with a pattern of intersecting circles",
+    vaLocation: "England", vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed",
+    vaSection: "British / Indian wild silk", vaDate: "ca. 1860" },
+
+  { id: 190, title: "Woven silk", imageFile: "O257714.jpg", accession: "AP.71:6-1879",
+    vaUrl: "https://collections.vam.ac.uk/item/O257714/",
+    vaObjectType: "Woven silk", vaMaterial: "silk (textile); Tussar moth silk woven with a cone and floral design",
+    vaLocation: "England", vaTechniqueBucket: "Woven", vaDyeBucket: "Undyed",
+    vaSection: "British / Indian wild silk", vaDate: "ca. 1860" }
+
+];
+
+/* ============= FILTER BUCKET DEFINITIONS =============
+   Order here = display order in the sidebar.
+*/
+
+const filterDefinitions = {
+  vaSection: [
+    "Indian wild silk",
+    "British / Indian wild silk",
+    "European tussore / Chinese tussah"
+  ],
+  vaLocation: [
+    "Bihar",
+    "West Bengal",
+    "Bangladesh",
+    "Assam",
+    "Odisha",
+    "Telangana",
+    "Maharashtra",
+    "Uttar Pradesh",
+    "Delhi",
+    "Gujarat",
+    "Nepal",
+    "Bhutan",
+    "Darjeeling",
+    "India",
+    "England",
+    "Great Britain",
+    "Great Britain / India",
+    "India / England",
+    "France",
+    "Belgium"
+  ],
+  vaTechniqueBucket: [
+    "Woven",
+    "Embroidery",
+    "Print"
+  ],
+  vaDyeBucket: [
+    "Dyed",
+    "Undyed"
+  ]
+};
