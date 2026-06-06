@@ -38,6 +38,9 @@ function normaliseFibre(raw, materialText, placeText) {
   // AIC's "Wild silk" — usually Chinese/Japanese → Tussore/Tussah
   if (r === "wild silk") return "Tussore / Tussah";
 
+  // BM West African wild silk (sanyan, Anaphe, Epiphora) — its own bucket
+  if (r === "wild silk (west africa)") return "Wild silk (West Africa)";
+
   return "Other";
 }
 
@@ -251,6 +254,41 @@ const MUSEUM_ADAPTERS = {
       };
     }
   },
+  bm: {
+    source: () => (typeof bmItems !== "undefined" ? bmItems : []),
+    museum: "The British Museum",
+    museumShort: "BM",
+    sourceLabel: "View on britishmuseum.org",
+    normalise(rec) {
+      const region = rec.region || rec.country || rec.culture || "";
+      return {
+        uid: "bm-" + rec.id,
+        museum: this.museum,
+        museumShort: this.museumShort,
+        title: rec.title || "—",
+        accession: rec.accession || "",
+        imageSrc: rec.imageFile ? "images/" + rec.imageFile : "",
+        hasImage: !!rec.imageFile,
+        sourceUrl: rec.sourceUrl || "",
+        sourceLabel: this.sourceLabel,
+        fibreBucket: normaliseFibre(rec.fibreBucket, rec.medium, region + " " + (rec.country || "")),
+        place: [rec.region, rec.country, rec.culture].filter(Boolean).join(", ") || "—",
+        country: rec.country || rec.culture || "",
+        region: region,
+        objectType: rec.objectName || rec.classification || "",
+        material: rec.medium || "",
+        date: rec.objectDate || "",
+        year: parseYear(rec.objectDate),
+        description: "",
+        dimensions: rec.dimensions || "",
+        extras: [
+          ["Department", rec.department],
+          ["Culture", rec.culture],
+          ["Credit line", rec.creditLine]
+        ]
+      };
+    }
+  },
   si: {
     source: () => (typeof siItems !== "undefined" ? siItems : []),
     museum: "Cooper Hewitt, Smithsonian Design Museum",
@@ -346,7 +384,7 @@ const activeFilters = {
 let activeSort = "fibre";
 let activeSearch = "";
 
-const FIBRE_ORDER = ["Tasar", "Tussore / Tussah", "Muga", "Eri", "Other"];
+const FIBRE_ORDER = ["Tasar", "Tussore / Tussah", "Muga", "Eri", "Wild silk (West Africa)", "Other"];
 
 /* ---------- DOM ---------- */
 const grid = document.getElementById("grid");
