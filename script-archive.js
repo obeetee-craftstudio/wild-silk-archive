@@ -494,6 +494,18 @@ let activeSearch = "";
 
 const FIBRE_ORDER = ["Tasar", "Tussore / Tussah", "Muga", "Eri", "Wild silk (West Africa)", "Wild silk (Mexico)", "Wild silk (other)", "Other"];
 
+// India + Indian states/regions — sorted to the top of the Country filter
+const INDIA_PRIORITY = new Set([
+  "India", "India / Nepal",
+  "West Bengal", "Bengal",
+  "Assam", "Bihar", "Odisha", "Orissa", "Jharkhand", "Chhattisgarh",
+  "Maharashtra", "Karnataka", "Tamil Nadu", "Madhya Pradesh",
+  "Uttar Pradesh", "Andhra Pradesh", "Kashmir", "Jammu and Kashmir",
+  "Punjab", "Gujarat", "Rajasthan", "Kerala", "Manipur", "Mizoram",
+  "Meghalaya", "Arunachal Pradesh", "Nagaland", "Tripura", "Sikkim",
+  "Telangana", "Goa", "Haryana", "Himachal Pradesh", "Delhi"
+]);
+
 /* ---------- DOM ---------- */
 const grid = document.getElementById("grid");
 const resultCount = document.getElementById("result-count");
@@ -525,6 +537,17 @@ function renderFilters() {
     } else if (key === "objectForm") {
       const FORM_ORDER = ["Cocoon or raw material", "Yarn or skein", "Textile or sample", "Garment or accessory"];
       options.sort((a, b) => FORM_ORDER.indexOf(a) - FORM_ORDER.indexOf(b));
+    } else if (key === "country") {
+      // India first, then Indian states/regions (by count), then everything else (by count)
+      options.sort((a, b) => {
+        if (a === "India") return -1;
+        if (b === "India") return 1;
+        const aIndia = INDIA_PRIORITY.has(a);
+        const bIndia = INDIA_PRIORITY.has(b);
+        if (aIndia && !bIndia) return -1;
+        if (!aIndia && bIndia) return 1;
+        return counts[b] - counts[a];
+      });
     } else {
       options.sort((a, b) => counts[b] - counts[a]);
     }
