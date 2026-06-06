@@ -357,9 +357,7 @@ function deriveObjectForm(item) {
   const t = ((item.objectType || "") + " " + (item.title || "") + " " + (item.material || "")).toLowerCase();
   if (/\b(yarn|skein|filature|thread)\b/.test(t)) return "Yarn or skein";
   if (/\b(cocoon|raw silk|wild silk casing)\b/.test(t)) return "Cocoon or raw material";
-  if (/\b(book|poster|drawing|print(?!ed)|sample book)\b/.test(t)) return "Document or print";
   if (/\b(sari|coat|choga|dress|robe|mantle|shawl|scarf|stole|cape|cope|surcoat|waitao|\bao\b|obi|wrapper|pelisse|shroud|belt|kesa|hitoe|kimono|cloak|costume|garment|dhoti|lungi|kerchief|rumal|chadar|chaddar|chikankari|chikan|pyjama|trouser|jacket|skirt|blouse|purse|bag|quilt|veil|turban)\b/.test(t)) return "Garment or accessory";
-  if (/\b(rug|hanging|curtain|netting|mosquito|cushion|cover|coverlet|cloth strip|throw)\b/.test(t)) return "Furnishing";
   return "Textile or sample";
 }
 
@@ -415,7 +413,7 @@ function renderFilters() {
     } else if (key === "century") {
       options.sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
     } else if (key === "objectForm") {
-      const FORM_ORDER = ["Cocoon or raw material", "Yarn or skein", "Textile or sample", "Garment or accessory", "Furnishing", "Document or print"];
+      const FORM_ORDER = ["Cocoon or raw material", "Yarn or skein", "Textile or sample", "Garment or accessory"];
       options.sort((a, b) => FORM_ORDER.indexOf(a) - FORM_ORDER.indexOf(b));
     } else {
       options.sort((a, b) => counts[b] - counts[a]);
