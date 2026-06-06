@@ -41,6 +41,12 @@ function normaliseFibre(raw, materialText, placeText) {
   // BM West African wild silk (sanyan, Anaphe, Epiphora) — its own bucket
   if (r === "wild silk (west africa)") return "Wild silk (West Africa)";
 
+  // PRM Mexico wild silk (Zapotec — Eucheira socialis) — its own bucket
+  if (r === "wild silk (mexico)") return "Wild silk (Mexico)";
+
+  // Generic catch-all for wild silk records that don't fit a named bucket
+  if (r === "wild silk (other)") return "Wild silk (other)";
+
   return "Other";
 }
 
@@ -289,6 +295,40 @@ const MUSEUM_ADAPTERS = {
       };
     }
   },
+  pr: {
+    source: () => (typeof prItems !== "undefined" ? prItems : []),
+    museum: "Pitt Rivers Museum",
+    museumShort: "PRM",
+    sourceLabel: "View on prm.ox.ac.uk",
+    normalise(rec) {
+      const region = rec.region || rec.country || rec.culture || "";
+      return {
+        uid: "pr-" + rec.id,
+        museum: this.museum,
+        museumShort: this.museumShort,
+        title: rec.title || "—",
+        accession: rec.accession || "",
+        imageSrc: rec.imageFile ? "images/" + rec.imageFile : "",
+        hasImage: !!rec.imageFile,
+        sourceUrl: rec.sourceUrl || "",
+        sourceLabel: this.sourceLabel,
+        fibreBucket: normaliseFibre(rec.fibreBucket, rec.medium, region + " " + (rec.country || "")),
+        place: [rec.region, rec.country, rec.culture].filter(Boolean).join(", ") || "—",
+        country: rec.country || rec.culture || "",
+        region: region,
+        objectType: rec.objectName || rec.classification || "",
+        material: rec.medium || "",
+        date: rec.objectDate || "",
+        year: parseYear(rec.objectDate),
+        description: "",
+        dimensions: rec.dimensions || "",
+        extras: [
+          ["Culture", rec.culture],
+          ["Credit line", rec.creditLine]
+        ]
+      };
+    }
+  },
   si: {
     source: () => (typeof siItems !== "undefined" ? siItems : []),
     museum: "Cooper Hewitt, Smithsonian Design Museum",
@@ -382,7 +422,7 @@ const activeFilters = {
 let activeSort = "fibre";
 let activeSearch = "";
 
-const FIBRE_ORDER = ["Tasar", "Tussore / Tussah", "Muga", "Eri", "Wild silk (West Africa)", "Other"];
+const FIBRE_ORDER = ["Tasar", "Tussore / Tussah", "Muga", "Eri", "Wild silk (West Africa)", "Wild silk (Mexico)", "Wild silk (other)", "Other"];
 
 /* ---------- DOM ---------- */
 const grid = document.getElementById("grid");
