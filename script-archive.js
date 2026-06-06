@@ -295,6 +295,41 @@ const MUSEUM_ADAPTERS = {
       };
     }
   },
+  hm: {
+    source: () => (typeof hmItems !== "undefined" ? hmItems : []),
+    museum: "Horniman Museum",
+    museumShort: "Horniman",
+    sourceLabel: "View on horniman.ac.uk",
+    normalise(rec) {
+      const region = rec.region || rec.country || rec.culture || "";
+      return {
+        uid: "hm-" + rec.id,
+        museum: this.museum,
+        museumShort: this.museumShort,
+        title: rec.title || "—",
+        accession: rec.accession || "",
+        imageSrc: rec.imageFile ? "images/" + rec.imageFile : "",
+        hasImage: !!rec.imageFile,
+        sourceUrl: rec.sourceUrl || "",
+        sourceLabel: this.sourceLabel,
+        fibreBucket: normaliseFibre(rec.fibreBucket, rec.medium, region + " " + (rec.country || "")),
+        place: [rec.region, rec.country, rec.culture].filter(Boolean).join(", ") || "—",
+        country: rec.country || rec.culture || "",
+        region: region,
+        objectType: rec.objectName || rec.classification || "",
+        material: rec.medium || "",
+        date: rec.objectDate || "",
+        year: parseYear(rec.objectDate),
+        description: "",
+        dimensions: rec.dimensions || "",
+        extras: [
+          ["Department", rec.department],
+          ["Classification", rec.classification],
+          ["Credit line", rec.creditLine]
+        ]
+      };
+    }
+  },
   pr: {
     source: () => (typeof prItems !== "undefined" ? prItems : []),
     museum: "Pitt Rivers Museum",
