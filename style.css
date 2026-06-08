@@ -159,7 +159,15 @@ h2 {
 }
 
 @media (max-width: 880px) {
-  .archive-inner { grid-template-columns: 1fr; }
+  .archive-inner { grid-template-columns: 1fr; gap: 24px; }
+  .filter-sidebar {
+    position: static;
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+  }
 }
 
 /* ===== Sidebar ===== */
@@ -780,6 +788,30 @@ body.landing { background: var(--cream); }
   .collection-logo .logo-mark { font-size: 64px; }
   .collection-body { padding: 20px 22px 22px; }
   .collection-body h3 { font-size: 22px; }
+
+  /* Archive — header */
+  .site-header { padding: 36px 20px 28px; }
+  .site-header h1 { font-size: 36px; line-height: 1.1; }
+  .subtitle { font-size: 16px; }
+
+  /* Archive — section padding */
+  .archive-section { padding: 28px 20px 60px; }
+
+  /* Archive — results bar stacks */
+  .results-bar { flex-direction: column; align-items: flex-start; gap: 10px; }
+
+  /* Archive — modal goes edge-to-edge */
+  .modal-overlay { padding: 0; }
+  .modal { max-height: 100vh; min-height: 100vh; border: none; width: 100%; }
+  .modal-image { min-height: 260px; padding: 16px; }
+  .modal-info { padding: 24px 20px 32px; }
+  .modal-info h2 { font-size: 24px; }
+  .detail-grid { grid-template-columns: 1fr; gap: 4px 0; }
+  .detail-grid dt { padding-top: 10px; }
+  .detail-grid dd { margin-bottom: 4px; }
+
+  /* Archive — footer */
+  .site-footer { padding: 24px 20px; }
 }
 
 /* ===========================================================
