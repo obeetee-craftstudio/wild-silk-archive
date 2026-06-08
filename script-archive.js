@@ -489,8 +489,10 @@ function deriveObjectForm(item) {
 
   // Raw material — the object IS yarn/cocoon/raw silk (title-driven)
   if (/\b(silk yarn|silk samples|yarn sample|cocoon|raw silk|skein|filature|hank of)\b/.test(t)) return "Raw material";
-  // BM-style: title "Sample" with explicit cocoon/raw material
-  if (/^\s*sample\s*$/i.test(item.title || "") && /\b(silkworm cocoon|raw silk|wild silk casing)\b/.test(mat)) return "Raw material";
+  // BM-style: title "Sample" with raw silk material (not woven or embroidered cloth).
+  // Distinguishes BM's ethnographic raw-silk specimens (2021,2022.4/5/6 — cocoons,
+  // yarn skeins, silk casings) from V&A's woven/embroidered "Sample" textiles.
+  if (/^\s*sample\s*$/i.test(item.title || "") && mat && !/woven|embroider/.test(mat)) return "Raw material";
 
   // Books — sample books, specimen books, newspaper/archive articles
   if (/\b(sample book|specimen book|book of samples)\b/.test(t)) return "Books";
