@@ -481,15 +481,27 @@ function deriveCentury(year) {
 }
 
 function deriveObjectForm(item) {
-  const t = ((item.objectType || "") + " " + (item.title || "") + " " + (item.material || "")).toLowerCase();
-  // Raw material — cocoons, yarns, skeins, threads, floss
-  if (/\b(cocoon|raw silk|wild silk casing|yarn|skein|filature|thread|floss|hank)\b/.test(t)) return "Raw material";
+  // Use TITLE + OBJECT TYPE only — NOT material description, which often mentions
+  // "embroidered with tussar silk thread" or "yarn" in fabric construction notes,
+  // causing false positives (quilts/robes/saris with thread-in-mat would wrongly
+  // bucket as Raw material).
+  const t = ((item.objectType || "") + " " + (item.title || "")).toLowerCase();
+  const mat = (item.material || "").toLowerCase();
+
+  // Raw material — the object IS yarn/cocoon/raw silk (title-driven)
+  if (/\b(silk yarn|silk samples|yarn sample|cocoon|raw silk|skein|filature|hank of)\b/.test(t)) return "Raw material";
+  // BM-style: title "Sample" with explicit cocoon/raw material
+  if (/^\s*sample\s*$/i.test(item.title || "") && /\b(silkworm cocoon|raw silk|wild silk casing)\b/.test(mat)) return "Raw material";
+
   // Sample book — bound books of samples
   if (/\b(sample book|specimen book|book of samples)\b/.test(t)) return "Sample book";
+
   // Garment — apparel/clothing worn on body
   if (/\b(sari|coat|choga|dress|robe|mantle|cape|cope|surcoat|waitao|\bao\b|wrapper|pelisse|kesa|hitoe|juban|kimono|cloak|costume|garment|dhoti|lungi|pyjama|trouser|jacket|skirt|blouse|chikan|tunic|gown|shirt|suit|tobe|waistcloth|hip-wrapper)\b/.test(t)) return "Garment";
+
   // Accessory — bags, scarves, belts, tools, accents, decorative items, umbrellas
   if (/\b(shawl|scarf|stole|belt|girdle|sash|kerchief|rumal|chadar|chaddar|obi|purse|bag|veil|turban|shroud|spindle|fan|parasol|umbrella|handkerchief|head-tie|shoulder cloth|salangore|fukusa|furoshiki|trimming)\b/.test(t)) return "Accessory";
+
   // Default — textile fragments, lengths, panels, hangings, swatches, fabric
   return "Textile";
 }
