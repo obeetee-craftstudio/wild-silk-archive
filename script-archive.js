@@ -57,6 +57,9 @@ function normaliseFibre(raw, materialText, placeText) {
   // for Wardle's Leek-printed Indian-tasar pieces) — museum's own classification, not our inference
   if (p.includes("indian wild silk")) return "Wild silk (India)";
 
+  // V&A's "European tussore / Chinese tussah" section → existing Tussore / Tussah bucket
+  if (p.includes("european tussore") || p.includes("chinese tussah")) return "Tussore / Tussah";
+
   // Generic catch-all for wild silk records that don't fit a named bucket
   if (r === "wild silk (other)" || m.includes("wild silk")) return "Wild silk (other)";
 
