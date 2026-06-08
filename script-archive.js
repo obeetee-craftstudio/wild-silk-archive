@@ -23,9 +23,9 @@ function normaliseFibre(raw, materialText, placeText) {
   if (r === "muga" || m.includes("muga") || m.includes("mooga") || m.includes("moonga") || m.includes("munga")) return "Muga";
 
   // Eri — Assamese wild silk (Samia ricini). Spelling variants: endi, errea, errya, eria, endy
-  if (r === "eri" || m.includes("eri silk") || m.includes(" eri ") ||
+  if (r === "eri" || r === "eria" || m.includes("eri silk") || m.includes(" eri ") ||
       m.includes("endi") || m.includes("errea") || m.includes("errya") ||
-      m.includes(" eria") || m.includes("endy")) return "Eri";
+      m.includes("eria") || m.includes("endy")) return "Eri";
 
   // Tasar — Indian wild silk (Antheraea mylitta). Variants: tussar, tussur, tusser, kosa
   if (r === "tasar" || r === "tussar") return "Tasar";
@@ -57,8 +57,8 @@ function normaliseFibre(raw, materialText, placeText) {
   // for Wardle's Leek-printed Indian-tasar pieces) — museum's own classification, not our inference
   if (p.includes("indian wild silk")) return "Wild silk (India)";
 
-  // V&A's "European tussore / Chinese tussah" section → its own bucket (mirrors V&A taxonomy)
-  if (p.includes("european tussore") || p.includes("chinese tussah")) return "European tussore / Chinese tussah";
+  // V&A's "European tussore / Chinese tussah" section → merge into generic Tussore / Tussah
+  if (p.includes("european tussore") || p.includes("chinese tussah")) return "Tussore / Tussah";
 
   // Generic catch-all for wild silk records that don't fit a named bucket
   if (r === "wild silk (other)" || m.includes("wild silk")) return "Wild silk (other)";
@@ -457,7 +457,8 @@ function parseYear(s) {
   const cleaned = String(s).toLowerCase();
   const yearMatch = cleaned.match(/\d{4}/);
   if (yearMatch) return parseInt(yearMatch[0], 10);
-  const centuryMatch = cleaned.match(/(\d{1,2})(?:st|nd|rd|th)\s*century/);
+  // matches "17th century", "19th Century AD", and BM's "17thC(early)" / "19thC (circa)" forms
+  const centuryMatch = cleaned.match(/(\d{1,2})(?:st|nd|rd|th)\s*c(?:entury)?(?![a-z])/);
   if (centuryMatch) {
     const c = parseInt(centuryMatch[1], 10);
     let y = (c - 1) * 100 + 50;
@@ -488,9 +489,24 @@ function deriveObjectForm(item) {
 }
 
 /* ---------- Build the unified archive ---------- */
+// African countries — collapsed into one "Africa" bucket in the Country filter.
+// Original country/region preserved in item.place and item.region for card display.
+const AFRICA_SET = new Set([
+  "Nigeria", "Burkina Faso", "Mali", "Côte d'Ivoire", "Cote d'Ivoire",
+  "Ghana", "Senegal", "Sierra Leone", "Liberia", "Togo", "Benin", "Niger",
+  "Cameroon", "Chad", "Sudan", "Ethiopia", "Kenya", "Tanzania", "Uganda",
+  "Madagascar", "Mozambique", "Zimbabwe", "South Africa", "Botswana",
+  "Namibia", "Angola", "Congo", "Democratic Republic of the Congo",
+  "Egypt", "Morocco", "Algeria", "Tunisia", "Libya", "Mauritania",
+  "Guinea", "Gambia", "Cape Verde", "Eritrea", "Somalia", "Rwanda", "Burundi", "Malawi", "Zambia"
+]);
+function normaliseCountry(c) {
+  return AFRICA_SET.has(c) ? "Africa" : c;
+}
 const archiveItems = Object.values(MUSEUM_ADAPTERS).flatMap(adapter =>
   adapter.source().map(rec => {
     const item = adapter.normalise(rec);
+    item.country = normaliseCountry(item.country);
     item.century = deriveCentury(item.year);
     item.objectForm = deriveObjectForm(item);
     return item;
@@ -508,7 +524,7 @@ const activeFilters = {
 let activeSort = "fibre";
 let activeSearch = "";
 
-const FIBRE_ORDER = ["Tasar", "Tussore / Tussah", "Muga", "Eri", "Wild silk (India)", "European tussore / Chinese tussah", "Wild silk (West Africa)", "Wild silk (Mexico)", "Wild silk (other)", "Other"];
+const FIBRE_ORDER = ["Tasar", "Tussore / Tussah", "Muga", "Eri", "Wild silk (India)", "Wild silk (West Africa)", "Wild silk (Mexico)", "Wild silk (other)", "Other"];
 
 // India + Indian states/regions — sorted to the top of the Country filter
 const INDIA_PRIORITY = new Set([
