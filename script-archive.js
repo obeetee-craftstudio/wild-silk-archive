@@ -808,6 +808,18 @@ clearBtn.addEventListener("click", () => {
   renderGrid();
 });
 
+/* ---------- Mobile filter collapse ---------- */
+// Tap the "Filter" header on mobile to expand/collapse the filter body.
+// The Clear-all button lives inside the header but must not toggle.
+const filterHeader = document.getElementById("filter-header");
+const filterSidebar = document.querySelector(".filter-sidebar");
+if (filterHeader && filterSidebar) {
+  filterHeader.addEventListener("click", (e) => {
+    if (e.target.closest("#clear-filters")) return;
+    filterSidebar.classList.toggle("open");
+  });
+}
+
 /* ---------- Utils ---------- */
 function escapeHtml(str) {
   if (str == null) return "";

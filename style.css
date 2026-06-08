@@ -158,6 +158,15 @@ h2 {
   gap: 40px;
 }
 
+/* Filter chevron — desktop hides it, mobile shows it */
+.filter-toggle-icon {
+  display: none;
+  margin-left: 6px;
+  font-size: 18px;
+  color: var(--ink-soft);
+  transition: transform 0.2s ease;
+}
+
 @media (max-width: 880px) {
   .archive-inner { grid-template-columns: 1fr; gap: 24px; }
   .filter-sidebar {
@@ -165,9 +174,16 @@ h2 {
     max-height: none;
     overflow: visible;
     padding-right: 0;
-    padding-bottom: 24px;
+    padding-bottom: 16px;
     border-bottom: 1px solid var(--rule);
   }
+  /* Filter header becomes a tap target */
+  .filter-header { cursor: pointer; user-select: none; margin-bottom: 0; padding-bottom: 12px; }
+  .filter-toggle-icon { display: inline-block; }
+  /* Hide filter body by default on mobile */
+  .filter-body { display: none; padding-top: 16px; }
+  .filter-sidebar.open .filter-body { display: block; }
+  .filter-sidebar.open .filter-toggle-icon { transform: rotate(180deg); }
 }
 
 /* ===== Sidebar ===== */
