@@ -498,13 +498,16 @@ function deriveObjectForm(item) {
   if (/\b(sample book|specimen book|book of samples)\b/.test(t)) return "Books";
   if (/\b(newspaper article|archive)\b/.test((item.objectType || "").toLowerCase())) return "Books";
 
+  // Uncut fabric override — "Dress fabric", "Skirt piece", "Garment piece", etc.
+  // Even though title contains a garment word, the object is uncut fabric → Textile.
+  if (/\b(fabric|piece)\b/.test((item.title || "").toLowerCase())) return "Textile";
+
   // Garment — STITCHED/TAILORED clothing only (cut + sewn). Unstitched drapes
   // (sari, dhoti, lungi, wrapped garment, waistcloth, hip-wrapper) → Textile.
   if (/\b(coat|choga|dress|robe|mantle|cape|cope|surcoat|waitao|\bao\b|pelisse|kesa|hitoe|juban|kimono|cloak|costume|pyjama|trouser|jacket|skirt|blouse|tunic|gown|shirt|suit|tobe)\b/.test(t)) return "Garment";
 
-  // Accessory — functional/structural non-fabric items: bags, belts, tools, parasols, obi
-  // (Cloth wraps — shawls, scarves, stoles, kerchiefs, chadars, veils, etc. — are Textile.)
-  if (/\b(belt|girdle|obi|purse|bag|spindle|fan|parasol|umbrella)\b/.test(t)) return "Accessory";
+  // Accessory — functional/structural items + headwear: bags, belts, tools, parasols, obi, turban
+  if (/\b(belt|girdle|obi|purse|bag|spindle|fan|parasol|umbrella|turban)\b/.test(t)) return "Accessory";
 
   // Default — uncut/draped cloth: sari, dhoti, lungi, shawl, scarf, stole, kerchief,
   // chadar, veil, sash, turban, lengths, fragments, panels, hangings, fabric swatches
