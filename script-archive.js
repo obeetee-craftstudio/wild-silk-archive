@@ -19,16 +19,18 @@ function normaliseFibre(raw, materialText, placeText) {
   const m = (materialText || "").toLowerCase();
   const p = (placeText || "").toLowerCase();
 
-  if (r === "muga" || m.includes("muga")) return "Muga";
-  if (r === "eri" || m.includes("eri silk") || m.includes(" eri ")) return "Eri";
+  // Muga — Assamese wild silk (Antheraea assamensis). Spelling variants: mooga, moonga, munga
+  if (r === "muga" || m.includes("muga") || m.includes("mooga") || m.includes("moonga") || m.includes("munga")) return "Muga";
 
-  // Indian wild silk records → Tasar (default Indian bucket)
+  // Eri — Assamese wild silk (Samia ricini). Spelling variants: endi, errea, errya, eria, endy
+  if (r === "eri" || m.includes("eri silk") || m.includes(" eri ") ||
+      m.includes("endi") || m.includes("errea") || m.includes("errya") ||
+      m.includes(" eria") || m.includes("endy")) return "Eri";
+
+  // Tasar — Indian wild silk (Antheraea mylitta). Variants: tussar, tussur, tusser, kosa
   if (r === "tasar" || r === "tussar") return "Tasar";
-  if (m.includes("tasar") || m.includes("tussar")) {
-    if (p.includes("india") || p.includes("bengal") || p.includes("assam") ||
-        p.includes("odisha") || p.includes("orissa") || p.includes("bihar") ||
-        p.includes("jharkhand") || p.includes("chhattisgarh") || p.includes("bhagal"))
-      return "Tasar";
+  if (m.includes("tasar") || m.includes("tussar") || m.includes("tussur") ||
+      m.includes("tusser") || m.includes("kosa silk") || m.includes(" kosa ")) {
     return "Tasar";
   }
   // Foreign tussah → Tussore/Tussah
@@ -44,8 +46,15 @@ function normaliseFibre(raw, materialText, placeText) {
   // PRM Mexico wild silk (Zapotec — Eucheira socialis) — its own bucket
   if (r === "wild silk (mexico)") return "Wild silk (Mexico)";
 
+  // Generic "wild silk" mentioned in material/title, with Indian context → Wild silk (India)
+  if (m.includes("wild silk") &&
+      (p.includes("india") || p.includes("bengal") || p.includes("assam") ||
+       p.includes("odisha") || p.includes("orissa") || p.includes("bihar") ||
+       p.includes("jharkhand") || p.includes("chhattisgarh") || p.includes("telangana") ||
+       p.includes("hyderabad") || p.includes("nepal"))) return "Wild silk (India)";
+
   // Generic catch-all for wild silk records that don't fit a named bucket
-  if (r === "wild silk (other)") return "Wild silk (other)";
+  if (r === "wild silk (other)" || m.includes("wild silk")) return "Wild silk (other)";
 
   return "Other";
 }
@@ -492,7 +501,7 @@ const activeFilters = {
 let activeSort = "fibre";
 let activeSearch = "";
 
-const FIBRE_ORDER = ["Tasar", "Tussore / Tussah", "Muga", "Eri", "Wild silk (West Africa)", "Wild silk (Mexico)", "Wild silk (other)", "Other"];
+const FIBRE_ORDER = ["Tasar", "Tussore / Tussah", "Muga", "Eri", "Wild silk (India)", "Wild silk (West Africa)", "Wild silk (Mexico)", "Wild silk (other)", "Other"];
 
 // India + Indian states/regions — sorted to the top of the Country filter
 const INDIA_PRIORITY = new Set([
