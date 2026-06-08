@@ -483,8 +483,7 @@ function deriveCentury(year) {
 function deriveObjectForm(item) {
   // Use TITLE + OBJECT TYPE only — NOT material description, which often mentions
   // "embroidered with tussar silk thread" or "yarn" in fabric construction notes,
-  // causing false positives (quilts/robes/saris with thread-in-mat would wrongly
-  // bucket as Raw material).
+  // causing false positives.
   const t = ((item.objectType || "") + " " + (item.title || "")).toLowerCase();
   const mat = (item.material || "").toLowerCase();
 
@@ -493,16 +492,20 @@ function deriveObjectForm(item) {
   // BM-style: title "Sample" with explicit cocoon/raw material
   if (/^\s*sample\s*$/i.test(item.title || "") && /\b(silkworm cocoon|raw silk|wild silk casing)\b/.test(mat)) return "Raw material";
 
-  // Sample book — bound books of samples
-  if (/\b(sample book|specimen book|book of samples)\b/.test(t)) return "Sample book";
+  // Books — sample books, specimen books, newspaper/archive articles
+  if (/\b(sample book|specimen book|book of samples)\b/.test(t)) return "Books";
+  if (/\b(newspaper article|archive)\b/.test((item.objectType || "").toLowerCase())) return "Books";
 
-  // Garment — apparel/clothing worn on body
-  if (/\b(sari|coat|choga|dress|robe|mantle|cape|cope|surcoat|waitao|\bao\b|wrapper|pelisse|kesa|hitoe|juban|kimono|cloak|costume|garment|dhoti|lungi|pyjama|trouser|jacket|skirt|blouse|chikan|tunic|gown|shirt|suit|tobe|waistcloth|hip-wrapper)\b/.test(t)) return "Garment";
+  // Garment — STITCHED/TAILORED clothing only (cut + sewn). Unstitched drapes
+  // (sari, dhoti, lungi, wrapped garment, waistcloth, hip-wrapper) → Textile.
+  if (/\b(coat|choga|dress|robe|mantle|cape|cope|surcoat|waitao|\bao\b|pelisse|kesa|hitoe|juban|kimono|cloak|costume|pyjama|trouser|jacket|skirt|blouse|tunic|gown|shirt|suit|tobe)\b/.test(t)) return "Garment";
 
-  // Accessory — bags, scarves, belts, tools, accents, decorative items, umbrellas
-  if (/\b(shawl|scarf|stole|belt|girdle|sash|kerchief|rumal|chadar|chaddar|obi|purse|bag|veil|turban|shroud|spindle|fan|parasol|umbrella|handkerchief|head-tie|shoulder cloth|salangore|fukusa|furoshiki|trimming)\b/.test(t)) return "Accessory";
+  // Accessory — functional/structural non-fabric items: bags, belts, tools, parasols, obi
+  // (Cloth wraps — shawls, scarves, stoles, kerchiefs, chadars, veils, etc. — are Textile.)
+  if (/\b(belt|girdle|obi|purse|bag|spindle|fan|parasol|umbrella)\b/.test(t)) return "Accessory";
 
-  // Default — textile fragments, lengths, panels, hangings, swatches, fabric
+  // Default — uncut/draped cloth: sari, dhoti, lungi, shawl, scarf, stole, kerchief,
+  // chadar, veil, sash, turban, lengths, fragments, panels, hangings, fabric swatches
   return "Textile";
 }
 
@@ -597,8 +600,8 @@ function renderFilters() {
     } else if (key === "century") {
       options.sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
     } else if (key === "objectForm") {
-      const FORM_ORDER = ["Raw material", "Textile", "Sample book", "Garment", "Accessory"];
-      options.sort((a, b) => FORM_ORDER.indexOf(a) - FORM_ORDER.indexOf(b));
+      // Sort by count desc (Textile → Garment → Accessory → Raw material → Books)
+      options.sort((a, b) => counts[b] - counts[a]);
     } else if (key === "country") {
       // India first, then Indian states/regions (by count), then everything else (by count)
       options.sort((a, b) => {
