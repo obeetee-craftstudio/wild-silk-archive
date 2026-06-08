@@ -500,8 +500,20 @@ const AFRICA_SET = new Set([
   "Egypt", "Morocco", "Algeria", "Tunisia", "Libya", "Mauritania",
   "Guinea", "Gambia", "Cape Verde", "Eritrea", "Somalia", "Rwanda", "Burundi", "Malawi", "Zambia"
 ]);
+// Country aliases — collapse near-duplicates and hybrid origins into a single
+// canonical name. India/X hybrids route to the DESTINATION country (preserves
+// Wardle's Leek colonial-trade signal in the filter); Nepal hybrid follows region.
+const COUNTRY_ALIASES = {
+  "United Kingdom": "Great Britain",
+  "Great Britain / India": "Great Britain",
+  "India / England": "England",
+  "London": "England",
+  "India / Nepal": "Nepal",
+  "Japan or Central Asia": "Japan"
+};
 function normaliseCountry(c) {
-  return AFRICA_SET.has(c) ? "Africa" : c;
+  if (AFRICA_SET.has(c)) return "Africa";
+  return COUNTRY_ALIASES[c] || c;
 }
 const archiveItems = Object.values(MUSEUM_ADAPTERS).flatMap(adapter =>
   adapter.source().map(rec => {
