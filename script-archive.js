@@ -482,10 +482,16 @@ function deriveCentury(year) {
 
 function deriveObjectForm(item) {
   const t = ((item.objectType || "") + " " + (item.title || "") + " " + (item.material || "")).toLowerCase();
-  if (/\b(yarn|skein|filature|thread)\b/.test(t)) return "Yarn or skein";
-  if (/\b(cocoon|raw silk|wild silk casing)\b/.test(t)) return "Cocoon or raw material";
-  if (/\b(sari|coat|choga|dress|robe|mantle|shawl|scarf|stole|cape|cope|surcoat|waitao|\bao\b|obi|wrapper|pelisse|shroud|belt|kesa|hitoe|kimono|cloak|costume|garment|dhoti|lungi|kerchief|rumal|chadar|chaddar|chikankari|chikan|pyjama|trouser|jacket|skirt|blouse|purse|bag|quilt|veil|turban)\b/.test(t)) return "Garment or accessory";
-  return "Textile or sample";
+  // Raw material — cocoons, yarns, skeins, threads, floss
+  if (/\b(cocoon|raw silk|wild silk casing|yarn|skein|filature|thread|floss|hank)\b/.test(t)) return "Raw material";
+  // Sample book — bound books of samples
+  if (/\b(sample book|specimen book|book of samples)\b/.test(t)) return "Sample book";
+  // Garment — apparel/clothing worn on body
+  if (/\b(sari|coat|choga|dress|robe|mantle|cape|cope|surcoat|waitao|\bao\b|wrapper|pelisse|kesa|hitoe|juban|kimono|cloak|costume|garment|dhoti|lungi|pyjama|trouser|jacket|skirt|blouse|chikan|tunic|gown|shirt|suit|tobe|waistcloth|hip-wrapper)\b/.test(t)) return "Garment";
+  // Accessory — bags, scarves, belts, tools, accents, decorative items, umbrellas
+  if (/\b(shawl|scarf|stole|belt|girdle|sash|kerchief|rumal|chadar|chaddar|obi|purse|bag|veil|turban|shroud|spindle|fan|parasol|umbrella|handkerchief|head-tie|shoulder cloth|salangore|fukusa|furoshiki|trimming)\b/.test(t)) return "Accessory";
+  // Default — textile fragments, lengths, panels, hangings, swatches, fabric
+  return "Textile";
 }
 
 /* ---------- Build the unified archive ---------- */
@@ -579,7 +585,7 @@ function renderFilters() {
     } else if (key === "century") {
       options.sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
     } else if (key === "objectForm") {
-      const FORM_ORDER = ["Cocoon or raw material", "Yarn or skein", "Textile or sample", "Garment or accessory"];
+      const FORM_ORDER = ["Raw material", "Textile", "Sample book", "Garment", "Accessory"];
       options.sort((a, b) => FORM_ORDER.indexOf(a) - FORM_ORDER.indexOf(b));
     } else if (key === "country") {
       // India first, then Indian states/regions (by count), then everything else (by count)
