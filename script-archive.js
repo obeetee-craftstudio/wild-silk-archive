@@ -57,8 +57,8 @@ function normaliseFibre(raw, materialText, placeText) {
   // for Wardle's Leek-printed Indian-tasar pieces) — museum's own classification, not our inference
   if (p.includes("indian wild silk")) return "Wild silk (India)";
 
-  // V&A's "European tussore / Chinese tussah" section → existing Tussore / Tussah bucket
-  if (p.includes("european tussore") || p.includes("chinese tussah")) return "Tussore / Tussah";
+  // V&A's "European tussore / Chinese tussah" section → its own bucket (mirrors V&A taxonomy)
+  if (p.includes("european tussore") || p.includes("chinese tussah")) return "European tussore / Chinese tussah";
 
   // Generic catch-all for wild silk records that don't fit a named bucket
   if (r === "wild silk (other)" || m.includes("wild silk")) return "Wild silk (other)";
@@ -508,7 +508,7 @@ const activeFilters = {
 let activeSort = "fibre";
 let activeSearch = "";
 
-const FIBRE_ORDER = ["Tasar", "Tussore / Tussah", "Muga", "Eri", "Wild silk (India)", "Wild silk (West Africa)", "Wild silk (Mexico)", "Wild silk (other)", "Other"];
+const FIBRE_ORDER = ["Tasar", "Tussore / Tussah", "Muga", "Eri", "Wild silk (India)", "European tussore / Chinese tussah", "Wild silk (West Africa)", "Wild silk (Mexico)", "Wild silk (other)", "Other"];
 
 // India + Indian states/regions — sorted to the top of the Country filter
 const INDIA_PRIORITY = new Set([
