@@ -796,7 +796,6 @@ function openModal(uid) {
       <h2>${escapeHtml(item.title)}</h2>
       ${item.description ? `<p class="brief-description">${escapeHtml(item.description)}</p>` : ""}
       <dl class="detail-grid">
-        <dt>Fibre family</dt><dd>${escapeHtml(item.fibreBucket)}</dd>
         <dt>Object type</dt><dd>${escapeHtml(item.objectType || "—")}</dd>
         <dt>Material</dt><dd>${escapeHtml(item.material || "—")}</dd>
         <dt>Place of origin</dt><dd>${escapeHtml(item.place)}</dd>
