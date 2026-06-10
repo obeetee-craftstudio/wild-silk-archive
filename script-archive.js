@@ -780,8 +780,10 @@ function openModal(uid) {
   const item = archiveItems.find(i => i.uid === uid);
   if (!item) return;
 
+  // Hide labels that aren't material to a record (museum-internal classification).
+  const HIDDEN_EXTRAS = new Set(["Maker", "Department"]);
   const extrasHtml = (item.extras || [])
-    .filter(([, v]) => v)
+    .filter(([k, v]) => v && !HIDDEN_EXTRAS.has(k))
     .map(([k, v]) => `<dt>${escapeHtml(k)}</dt><dd>${escapeHtml(v)}</dd>`)
     .join("");
 
