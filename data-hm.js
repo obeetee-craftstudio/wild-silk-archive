@@ -1,6 +1,5 @@
 // Horniman Museum (London) — wild silk records
 // Verbatim from horniman.ac.uk/collections
-// test edit from craft studio mac - 18 june 2026
 
 const hmItems = [
   {
